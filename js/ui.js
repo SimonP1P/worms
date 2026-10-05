@@ -42,5 +42,4 @@ export class UI {
       b.addEventListener("click",()=>this.game.selectWorm(w.name)); this.wormSelection.appendChild(b);
     }
   }
-  }
 }
