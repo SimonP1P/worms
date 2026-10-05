@@ -27,6 +27,8 @@ export class Game {
     this.terrain = null;
     this.worms = [];
     this.weapon = Weapons.bazooka;
+    this.shotPower = 0.5;
+    this.aimAngle = 0;
     this.keys = new Set();
     this.pointer = { x: canvas.width / 2, y: canvas.height / 2 };
     this.bindInput();
@@ -43,6 +45,7 @@ export class Game {
       const r = this.canvas.getBoundingClientRect();
       this.pointer.x = (e.clientX-r.left) * this.canvas.width/r.width;
       this.pointer.y = (e.clientY-r.top) * this.canvas.height/r.height;
+      if(this.activeWorm){ const dx=this.pointer.x-this.activeWorm.x,dy=this.pointer.y-this.activeWorm.y; this.aimAngle=Math.atan2(dy,dx); this.shotPower=Math.max(0.15,Math.min(1,Math.hypot(dx,dy)/420)); }
     });
     this.canvas.addEventListener("pointerdown", () => { if (this.state === STATES.PLAYING) this.fire(); });
   }
@@ -101,7 +104,7 @@ export class Game {
     const dx = this.pointer.x - this.activeWorm.x;
     const dy = this.pointer.y - this.activeWorm.y;
     const length = Math.max(1, Math.hypot(dx,dy));
-    const speed = Math.min(16, Math.max(7, length * 0.035));
+    const speed = 260 + this.shotPower * 560;
     this.projectile = new Projectile(this.activeWorm.x, this.activeWorm.y-14, dx/length*speed, dy/length*speed, this.weapon);
     this.state = STATES.PROJECTILE;
   }
@@ -144,6 +147,7 @@ export class Game {
     c.fillStyle="#14233a"; c.fillRect(0,0,this.canvas.width,this.canvas.height);
     this.terrain?.draw(c);
     for (const w of this.worms) w.draw(c, w===this.activeWorm);
+    if(this.state===STATES.PLAYING && this.activeWorm){ c.save(); c.strokeStyle="#fff"; c.lineWidth=2; c.setLineDash([6,5]); c.beginPath(); c.moveTo(this.activeWorm.x,this.activeWorm.y-8); c.lineTo(this.activeWorm.x+Math.cos(this.aimAngle)*90,this.activeWorm.y-8+Math.sin(this.aimAngle)*90); c.stroke(); c.restore(); }
     this.projectile?.draw(c);
     if (this.state===STATES.PAUSED) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText("Pausiert",40,60); }
     if (this.state===STATES.GAME_OVER) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText(this.winnerText(),40,60); }
