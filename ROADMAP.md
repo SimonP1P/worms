@@ -629,25 +629,25 @@ Diese Phase kommt erst, wenn das lokale Spiel stabil funktioniert.
 
 ## 17.1 Netzwerkarchitektur
 
-- [ ] Game-Server erstellen
-- [ ] Client/Server-Kommunikation definieren
-- [ ] WebSocket-Verbindung einrichten
+- [x] Game-Server erstellen
+- [x] Client/Server-Kommunikation definieren
+- [x] WebSocket-Verbindung einrichten
 - [ ] Server als autoritative Instanz verwenden
 
 ## 17.2 Lobby
 
-- [ ] Online-Menü
-- [ ] Lobby erstellen
-- [ ] Lobby beitreten
-- [ ] Lobby-ID/Code
-- [ ] Spielerstatus anzeigen
+- [x] Online-Menü
+- [x] Lobby erstellen
+- [x] Lobby beitreten
+- [x] Lobby-ID/Code
+- [x] Spielerstatus anzeigen
 
 ## 17.3 Match-Konfiguration
 
-- [ ] Map auswählen
-- [ ] Teamgröße festlegen
-- [ ] Spieler zu Teams zuweisen
-- [ ] Charakteranpassung synchronisieren
+- [x] Map auswählen
+- [x] Teamgröße festlegen
+- [x] Spieler zu Teams zuweisen
+- [x] Charakteranpassung synchronisieren
 
 ## 17.4 Synchronisation
 
