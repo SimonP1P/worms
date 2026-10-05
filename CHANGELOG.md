@@ -127,3 +127,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `.gitignore` anlegen.
+
+
+---
+
+## Zyklus 4 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `.gitignore` für Betriebssystem-, Editor-, Log-, Dependency-, Build-, Coverage- und lokale Umgebungsdateien angelegt.
+
+### Neue Dateien
+- `.gitignore`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Inhalt der `.gitignore` auf ein reines Browserprojekt ohne verpflichtende Build-Abhängigkeiten geprüft.
+- Roadmap und Changelog auf den neuen Stand gebracht.
+
+### Bekannte Probleme
+- Die eigentliche Browser-Spielstruktur fehlt noch.
+
+### Nächster Schritt
+- Grundstruktur mit HTML, CSS, JavaScript-Modulen und Asset-Platzhaltern erstellen.
