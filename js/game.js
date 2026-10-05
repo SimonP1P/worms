@@ -53,7 +53,7 @@ export class Game {
       new Worm({x:map.spawns[1].x,y:map.spawns[1].y,team:1,color:"#ff7c8a",hat:"cap",name:"Rot 1"})
     ];
     this.wind = (Math.random() * 2 - 1) * 12;
-    this.team = 0; this.turn = 1; this.activeWorm = this.worms[0];
+    this.team = 0; this.turn = 1; this.setActiveWorm(this.worms[0]);
     this.state = STATES.PLAYING;
     if (!this.running) { this.running = true; requestAnimationFrame(t => this.loop(t)); }
   }
@@ -65,12 +65,17 @@ export class Game {
     this.state = this.state === STATES.PAUSED ? STATES.PLAYING : STATES.PAUSED;
   }
 
+  setActiveWorm(worm) {
+    for (const item of this.worms) item.active = item === worm;
+    this.activeWorm = worm || null;
+  }
+
   endTurn() {
     if (this.state !== STATES.PLAYING) return;
     this.state = STATES.TURN;
     this.team = this.team === 0 ? 1 : 0;
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
-    this.activeWorm = alive[0] || null;
+    this.setActiveWorm(alive[0] || null);
     this.turn++;
     this.wind = (Math.random() * 2 - 1) * 12;
     window.setTimeout(() => { if (this.state === STATES.TURN) this.state = STATES.PLAYING; }, 300);
