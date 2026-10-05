@@ -581,41 +581,41 @@ Nach jedem Tod:
 
 ## 16.1 KI-Grundlage
 
-- [ ] KI-Team erstellen
-- [ ] KI-Zug erkennen
-- [ ] KI-Wurm auswählen
-- [ ] KI-Waffe auswählen
-- [ ] KI schießen lassen
+- [x] KI-Team erstellen
+- [x] KI-Zug erkennen
+- [x] KI-Wurm auswählen
+- [x] KI-Waffe auswählen
+- [x] KI schießen lassen
 
 ## 16.2 Zielsystem
 
-- [ ] Gegnerposition erkennen
-- [ ] Distanz berechnen
-- [ ] Winkel schätzen
-- [ ] Schussstärke schätzen
-- [ ] Wind berücksichtigen
+- [x] Gegnerposition erkennen
+- [x] Distanz berechnen
+- [x] Winkel schätzen
+- [x] Schussstärke schätzen
+- [x] Wind berücksichtigen
 
 ## 16.3 KI-Entscheidungen
 
-- [ ] Ziel auswählen
-- [ ] Wurm auswählen
-- [ ] Waffe auswählen
-- [ ] Schuss ausführen
+- [x] Ziel auswählen
+- [x] Wurm auswählen
+- [x] Waffe auswählen
+- [x] Schuss ausführen
 
 ## 16.4 Schwierigkeitsgrade
 
 ### Einfach
-- [ ] größere Zielabweichung
-- [ ] einfache Waffenwahl
+- [x] größere Zielabweichung
+- [x] einfache Waffenwahl
 
 ### Normal
-- [ ] bessere Zielberechnung
-- [ ] Wind berücksichtigen
+- [x] bessere Zielberechnung
+- [x] Wind berücksichtigen
 
 ### Schwer
-- [ ] präzisere Zielberechnung
-- [ ] taktische Wurmauswahl
-- [ ] bessere Waffenwahl
+- [x] präzisere Zielberechnung
+- [x] taktische Wurmauswahl
+- [x] bessere Waffenwahl
 
 ## 16.5 Ergebnis
 
