@@ -69,7 +69,7 @@ export class Game {
   configureTeamSize(size) { this.teamSize = Math.max(1, Math.min(3, Number(size) || 1)); }
   configureMap(id) { if(MAPS.some(m=>m.id===id)) this.mapId=id; }
   configureWorms(configs) { this.wormConfigs=configs.map(c=>({color:c.color,hat:c.hat})); }
-  configureMode(mode) { this.mode=mode==="pc"?"pc":"local"; }
+  configureMode(mode) { this.mode=mode==="online"?"online":"pc"; }
   configureOnline(team) { this.mode="online"; this.onlineTeam=team; }
   setOnlineClient(client) { this.onlineClient=client; }
   setAudio(audio) { this.audio=audio; }
@@ -86,6 +86,9 @@ export class Game {
 
   start() {
     this.state = STATES.LOADING;
+    this.startTime = performance.now();
+    this.matchDuration = 0;
+    this.winnerTeam = null;
     const map = createMap(MAPS.find(m=>m.id===this.mapId) || MAPS[0]);
     this.terrain = new Terrain(map);
     this.worms = [];
