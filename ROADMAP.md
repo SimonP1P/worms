@@ -282,31 +282,31 @@ Spieler müssen Wind bei der Zielberechnung berücksichtigen.
 
 ## 8.1 Explosion-System
 
-- [ ] Explosionsposition bestimmen
-- [ ] Explosionsradius definieren
-- [ ] Explosion rendern
-- [ ] Explosion zeitlich animieren
+- [x] Explosionsposition bestimmen
+- [x] Explosionsradius definieren
+- [x] Explosion rendern
+- [x] Explosion zeitlich animieren
 
 ## 8.2 Schaden
 
-- [ ] Entfernung zum Explosionszentrum berechnen
-- [ ] Schaden abhängig von Entfernung berechnen
-- [ ] Lebenspunkte reduzieren
-- [ ] Mindest-/Maximalschaden definieren
+- [x] Entfernung zum Explosionszentrum berechnen
+- [x] Schaden abhängig von Entfernung berechnen
+- [x] Lebenspunkte reduzieren
+- [x] Mindest-/Maximalschaden definieren
 
 ## 8.3 Rückstoß
 
-- [ ] Explosionsrichtung berechnen
-- [ ] Rückstoß anwenden
-- [ ] Stärke abhängig von Entfernung machen
-- [ ] Fall-/Flugphysik nach Rückstoß berücksichtigen
+- [x] Explosionsrichtung berechnen
+- [x] Rückstoß anwenden
+- [x] Stärke abhängig von Entfernung machen
+- [x] Fall-/Flugphysik nach Rückstoß berücksichtigen
 
 ## 8.4 Tod
 
-- [ ] 0 HP erkennen
-- [ ] Wurm als ausgeschieden markieren
-- [ ] Wurm nicht mehr auswählbar machen
-- [ ] Tod visuell darstellen
+- [x] 0 HP erkennen
+- [x] Wurm als ausgeschieden markieren
+- [x] Wurm nicht mehr auswählbar machen
+- [x] Tod visuell darstellen
 
 ---
 
