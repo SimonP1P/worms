@@ -132,7 +132,7 @@ export class Game {
     if (this.state === STATES.PROJECTILE && this.projectile) {
       if(this.weapon.id==="dynamite"){ this.dynamiteTimer-=dt; if(this.dynamiteTimer<=0)this.resolveImpact(this.projectile.x,this.projectile.y); }
       else this.projectile.update(dt, this.wind);
-      if (this.projectile.outside(this.canvas) || this.terrain.collides(this.projectile.x,this.projectile.y)) {
+      if (this.projectile && (this.projectile.outside(this.canvas) || this.terrain.collides(this.projectile.x,this.projectile.y))) {
         this.resolveImpact(this.projectile.x,this.projectile.y);
       }
     }
