@@ -30,7 +30,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [x] Repository-Struktur prüfen
 - [x] `README.md` prüfen
 - [x] `ROADMAP.md` anlegen
-- [ ] `.gitignore` anlegen
+- [x] `.gitignore` anlegen
 - [ ] sinnvolle Commit-Struktur festlegen
 
 ## 1.2 Grundstruktur erstellen
