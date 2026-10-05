@@ -39,6 +39,7 @@ document.querySelectorAll("[data-action]").forEach((button) => {
     } else if(button.dataset.action==="start-online"){ alert("Online-Multiplayer wird in Phase 17 aktiviert."); } else if(button.dataset.action==="settings"){ alert("Einstellungen folgen im Audio/UI-Polishing."); } else if(button.dataset.action==="credits"){ alert("Worms Arena – eigenständiges Browsergame."); }
   });
 });
+document.querySelector("#shoot-button").addEventListener("click", () => game.fire());
 document.querySelector("#end-turn").addEventListener("click", () => game.endTurn());
 document.querySelectorAll("[data-weapon]").forEach(button => button.addEventListener("click", () => game.selectWeapon(button.dataset.weapon)));
 document.querySelector("#back-menu").addEventListener("click", () => {
