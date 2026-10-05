@@ -803,3 +803,36 @@ Phase 8 – Explosionen und Schaden
 
 ### Nächster Schritt
 - Phase 9: Zerstörbares Terrain und Kollisionsanpassung nach Kratern vertiefen.
+
+
+---
+
+## Zyklus 26 – 2026-10-05
+
+### Phase
+Phase 9 – Zerstörbares Terrain
+
+### Erledigt
+- Terrain als veränderbares Höhenprofil gespeichert.
+- Explosionsradien erzeugen dauerhafte Krater und aktualisieren die Kollisionshöhe.
+- Terrain stellt Boden-/Kollisionsabfragen nach Änderungen direkt aus den aktuellen Daten bereit.
+- Lebende Würmer werden nach einer Explosion auf die neue Bodenoberfläche gesetzt.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/terrain.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Krateränderung bleibt im Map-Bereich.
+- Neue Bodenhöhe wird unmittelbar für Wurm-Kollisionen verwendet.
+
+### Bekannte Probleme
+- Das Terrain ist als 1D-Höhenprofil modelliert; Höhlen/überhängende Geometrie sind nicht Teil des aktuellen Prototyps.
+
+### Nächster Schritt
+- Phase 10: Waffenarchitektur, Bazooka, Granate, Dynamit und freie Waffenwahl pro Zug ausbauen.
