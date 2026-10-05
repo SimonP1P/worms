@@ -559,3 +559,38 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - Phase 2: Game Loop und Spielzustände vollständig ausbauen.
+
+
+---
+
+## Zyklus 19 – 2026-10-05
+
+### Phase
+Phase 2 – Game Engine / Spielschleife
+
+### Erledigt
+- `requestAnimationFrame`-Game-Loop mit Delta-Time und getrennten Update-/Render-Schritten umgesetzt.
+- Pause-Zustand ergänzt.
+- Main Menu, Game Setup, Loading, Playing, Projectile Flying, Explosion, Turn Transition und Game Over als Zustände abgebildet.
+- Mauszeiger, Mausklicks und Tastatur-Eingaben mit zustandsabhängiger Verarbeitung verbunden.
+- Turn Transition mit kurzer Übergangszeit implementiert.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Game-State-Namen gegen Roadmap abgeglichen.
+- Update/Render-Loop auf begrenzte Delta-Time geprüft.
+- Eingaben sind nur während eines spielbaren Zustands für Gameplay-Aktionen aktiv.
+
+### Bekannte Probleme
+- Browser-E2E-Ausführung steht noch aus.
+- Spielphysik und Terrain sind noch Prototypen.
+
+### Nächster Schritt
+- Phase 3: Map-System, Spawnpunkte und erste vollständig geladene Test-Map ausbauen.
