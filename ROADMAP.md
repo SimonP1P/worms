@@ -453,7 +453,7 @@ Der Spieler kann in jedem Zug eine andere verfügbare Waffe wählen.
 - [x] Hut
 - [x] Cap
 - [x] Mütze
-- [ ] Vorschau
+- [x] Vorschau
 - [ ] Links-Pfeil
 - [ ] Rechts-Pfeil
 - [ ] Auswahl speichern
@@ -474,45 +474,45 @@ Der Spieler kann seine Würmer vollständig nach den festgelegten Optionen konfi
 
 ## 13.1 Hauptmenü
 
-- [ ] Spiel starten
-- [ ] Gegen PC
-- [ ] Online
-- [ ] Einstellungen
-- [ ] Credits/Info
+- [x] Spiel starten
+- [x] Gegen PC
+- [x] Online
+- [x] Einstellungen
+- [x] Credits/Info
 
 ## 13.2 Spielmodus auswählen
 
-- [ ] PC auswählen
-- [ ] Online auswählen
-- [ ] Auswahl bestätigen
+- [x] PC auswählen
+- [x] Online auswählen
+- [x] Auswahl bestätigen
 
 ## 13.3 Welt auswählen
 
-- [ ] vier Welten anzeigen
-- [ ] Pfeile/Buttons
+- [x] vier Welten anzeigen
+- [x] Pfeile/Buttons
 - [ ] Vorschau
 - [ ] Auswahl bestätigen
 
 ## 13.4 Teamgröße auswählen
 
-- [ ] 1 Wurm
-- [ ] 2 Würmer
-- [ ] 3 Würmer
+- [x] 1 Wurm
+- [x] 2 Würmer
+- [x] 3 Würmer
 
 ## 13.5 Würmer konfigurieren
 
-- [ ] Farbe
-- [ ] Kopfbedeckung
+- [x] Farbe
+- [x] Kopfbedeckung
 - [ ] Vorschau
-- [ ] Konfiguration speichern
+- [x] Konfiguration speichern
 
 ## 13.6 Match starten
 
-- [ ] alle Einstellungen prüfen
-- [ ] Map laden
-- [ ] Teams erstellen
-- [ ] Würmer spawnen
-- [ ] Spiel starten
+- [x] alle Einstellungen prüfen
+- [x] Map laden
+- [x] Teams erstellen
+- [x] Würmer spawnen
+- [x] Spiel starten
 
 ---
 
