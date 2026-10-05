@@ -34,6 +34,7 @@ export class Game {
     this.onlineTeam = null;
     this.onlineClient = null;
     this.remoteEvent = null;
+    this.audio = null;
     this.activeWorm = null;
     this.projectile = null;
     this.explosion = null;
@@ -71,6 +72,7 @@ export class Game {
   configureMode(mode) { this.mode=mode==="pc"?"pc":"local"; }
   configureOnline(team) { this.mode="online"; this.onlineTeam=team; }
   setOnlineClient(client) { this.onlineClient=client; }
+  setAudio(audio) { this.audio=audio; }
   applyServerState(snapshot) {
     if(!snapshot)return;
     if(this.terrain && Array.isArray(snapshot.terrain)) this.terrain.surface=snapshot.terrain.slice();
@@ -149,7 +151,7 @@ export class Game {
       const speed = 260 + this.shotPower * 560;
       this.projectile = new Projectile(this.activeWorm.x, this.activeWorm.y-14, dx/length*speed, dy/length*speed, this.weapon);
     }
-    this.state = STATES.PROJECTILE;
+    this.state = STATES.PROJECTILE; this.audio?.play("shoot");
   }
 
   update(dt) {
@@ -174,7 +176,7 @@ export class Game {
     for (const worm of this.worms) { worm.applyExplosion(x,y,this.projectile.weapon.damage,radius); if(worm.alive)this.terrain.settleEntity(worm); }
     this.explosion = {x,y,radius,age:0,duration:0.35};
     this.projectile = null;
-    this.state = STATES.EXPLOSION;
+    this.state = STATES.EXPLOSION; this.audio?.play("explosion");
     this.checkWinner();
     if (this.state !== STATES.GAME_OVER) setTimeout(() => this.endTurn(), 450);
   }
