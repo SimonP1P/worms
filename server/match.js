@@ -35,7 +35,7 @@ function explode(state,x,y,weapon){
 export function applyAction(state,team,action,payload={}){
   if(state.state!=="playing"||team!==state.turn)return {ok:false,error:"Nicht dein Zug"};
   if(action==="select_worm"){
-    const w=state.worms.find(w=>w.id===payload.wormId&&w.team===team&&w.alive);if(!w)return {ok:false,error:"Ungültiger Wurm"};state.activeWormId=w.id;return {ok:true};
+    const w=state.worms.find(w=>(w.id===payload.wormId||w.name===payload.wormId)&&w.team===team&&w.alive);if(!w)return {ok:false,error:"Ungültiger Wurm"};state.activeWormId=w.id;return {ok:true};
   }
   if(action==="select_weapon"){if(!weaponById(payload.weapon))return {ok:false,error:"Ungültige Waffe"};state.weapon=payload.weapon;return {ok:true};}
   if(action==="fire"){
