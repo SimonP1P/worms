@@ -2,6 +2,7 @@ import { Worm } from "./worm.js";
 import { Terrain } from "./terrain.js";
 import { Projectile } from "./projectile.js";
 import { Weapons } from "./weapons.js";
+import { AIController } from "./ai.js";
 import { MAPS, createMap } from "./maps.js";
 
 export const STATES = Object.freeze({
@@ -22,6 +23,9 @@ export class Game {
     this.teamSize = 1;
     this.mapId = "meadow";
     this.wormConfigs = Array.from({length:6},()=>({color:"#7cf06b",hat:"none"}));
+    this.mode = "pc";
+    this.aiDifficulty = "normal";
+    this.ai = new AIController(this,this.aiDifficulty);
     this.turnDuration = 20;
     this.turnRemaining = this.turnDuration;
     this.startTime = 0;
@@ -61,6 +65,8 @@ export class Game {
   configureTeamSize(size) { this.teamSize = Math.max(1, Math.min(3, Number(size) || 1)); }
   configureMap(id) { if(MAPS.some(m=>m.id===id)) this.mapId=id; }
   configureWorms(configs) { this.wormConfigs=configs.map(c=>({color:c.color,hat:c.hat})); }
+  configureMode(mode) { this.mode=mode==="pc"?"pc":"local"; }
+  configureDifficulty(level) { this.aiDifficulty=["easy","normal","hard"].includes(level)?level:"normal"; this.ai=new AIController(this,this.aiDifficulty); }
 
   start() {
     this.state = STATES.LOADING;
@@ -101,7 +107,7 @@ export class Game {
     this.turn++;
     this.wind = (Math.random() * 2 - 1) * 12;
     this.turnRemaining = this.turnDuration;
-    window.setTimeout(() => { if (this.state === STATES.TURN) this.state = STATES.PLAYING; }, 300);
+    window.setTimeout(() => { if (this.state === STATES.TURN) { this.state = STATES.PLAYING; if(this.mode==="pc" && this.team===1) window.setTimeout(()=>this.ai.takeTurn(),250); } }, 300);
   }
 
   selectWorm(wormId) {
