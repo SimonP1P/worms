@@ -31,6 +31,7 @@ export class Game {
     this.startTime = 0;
     this.matchDuration = 0;
     this.winnerTeam = null;
+    this.onlineTeam = null;
     this.activeWorm = null;
     this.projectile = null;
     this.explosion = null;
@@ -66,6 +67,8 @@ export class Game {
   configureMap(id) { if(MAPS.some(m=>m.id===id)) this.mapId=id; }
   configureWorms(configs) { this.wormConfigs=configs.map(c=>({color:c.color,hat:c.hat})); }
   configureMode(mode) { this.mode=mode==="pc"?"pc":"local"; }
+  configureOnline(team) { this.mode="online"; this.onlineTeam=team; }
+  setRemoteTurn(team) { this.team=team; const alive=this.worms.filter(w=>w.alive&&w.team===team); this.setActiveWorm(alive[0]||null); this.turnRemaining=this.turnDuration; this.state=STATES.PLAYING; }
   configureDifficulty(level) { this.aiDifficulty=["easy","normal","hard"].includes(level)?level:"normal"; this.ai=new AIController(this,this.aiDifficulty); }
 
   start() {
