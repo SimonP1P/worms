@@ -36,11 +36,11 @@
   </section>
 </main>
 <script type="module">
-  import("./js/main.js?v=3").catch(error=>{
+  import("./js/main.js?v=4").catch(error=>{
     console.error("Worms Arena konnte nicht gestartet werden:",error);
     const box=document.createElement("div");
     box.style.cssText="position:fixed;inset:auto 1rem 1rem 1rem;z-index:9999;padding:1rem;background:#5b1720;color:#fff;border:2px solid #ff7c8a;border-radius:12px;font:600 14px/1.4 system-ui;box-shadow:0 10px 30px #0008";
-    box.innerHTML="<strong>Spiel konnte nicht gestartet werden.</strong><br><span>Bitte Seite mit Strg+F5 neu laden.</span>";
+    box.innerHTML="<strong>Spiel konnte nicht gestartet werden.</strong><br><span>"+String(error?.message||error)+"</span>";
     document.body.appendChild(box);
   });
 </script>
