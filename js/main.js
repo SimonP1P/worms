@@ -6,7 +6,8 @@ const game = new Game(canvas);
 const ui = new UI(game);
 let selectedTeamSize = 1;
 let selectedMap = "meadow";
-document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; }));
+const mapPreview = document.querySelector("#map-preview");
+document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; if(mapPreview) mapPreview.textContent = button.textContent; }));
 document.querySelectorAll("[data-team-size]").forEach(button => button.addEventListener("click", () => { selectedTeamSize = Number(button.dataset.teamSize); }));
 
 document.querySelectorAll("[data-action]").forEach((button) => {
