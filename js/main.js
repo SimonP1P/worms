@@ -21,6 +21,7 @@ for(let i=0;i<6;i++){
 const game = new Game(canvas);
 const ui = new UI(game);
 let selectedTeamSize = 1;
+let selectedMode = "pc";
 let selectedMap = "meadow";
 const mapPreview = document.querySelector("#map-preview");
 document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; if(mapPreview) mapPreview.textContent = button.textContent; }));
@@ -29,12 +30,13 @@ document.querySelectorAll("[data-team-size]").forEach(button => button.addEventL
 document.querySelectorAll("[data-action]").forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.action === "start-pc" || button.dataset.action === "start-local") {
+      selectedMode = "pc";
       ui.showGame();
       game.configureTeamSize(selectedTeamSize);
       game.configureMap(selectedMap);
       game.configureWorms(wormConfigs);
       game.start();
-    }
+    } else if(button.dataset.action==="start-online"){ alert("Online-Multiplayer wird in Phase 17 aktiviert."); } else if(button.dataset.action==="settings"){ alert("Einstellungen folgen im Audio/UI-Polishing."); } else if(button.dataset.action==="credits"){ alert("Worms Arena – eigenständiges Browsergame."); }
   });
 });
 document.querySelector("#end-turn").addEventListener("click", () => game.endTurn());
