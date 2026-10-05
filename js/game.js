@@ -170,6 +170,7 @@ export class Game {
     for (const w of this.worms) w.draw(c, w===this.activeWorm);
     if(this.state===STATES.PLAYING && this.activeWorm){ c.save(); c.strokeStyle="#fff"; c.lineWidth=2; c.setLineDash([6,5]); c.beginPath(); c.moveTo(this.activeWorm.x,this.activeWorm.y-8); c.lineTo(this.activeWorm.x+Math.cos(this.aimAngle)*90,this.activeWorm.y-8+Math.sin(this.aimAngle)*90); c.stroke(); c.restore(); }
     this.projectile?.draw(c);
+    if(this.state===STATES.TURN){ c.fillStyle="#0008"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="28px sans-serif"; c.fillText("Team "+(this.team+1)+" ist dran",40,60); }
     if(this.explosion){ const p=Math.min(1,this.explosion.age/this.explosion.duration); c.save(); c.globalAlpha=1-p; c.fillStyle="#ffcf5a"; c.beginPath(); c.arc(this.explosion.x,this.explosion.y,this.explosion.radius*(0.45+0.55*p),0,Math.PI*2); c.fill(); c.restore(); if(p>=1)this.explosion=null; }
     if (this.state===STATES.PAUSED) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText("Pausiert",40,60); }
     if (this.state===STATES.GAME_OVER) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText(this.winnerText(),40,60); }
