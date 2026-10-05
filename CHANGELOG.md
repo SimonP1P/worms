@@ -386,3 +386,30 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/projectile.js` erstellen.
+
+
+---
+
+## Zyklus 13 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Projektil-Entity mit Position, Geschwindigkeit, Gravitation, Wind-Einfluss und Map-Grenzprüfung erstellt.
+
+### Neue Dateien
+- `js/projectile.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Flugzustandsänderung und Grenzprüfung statisch geprüft.
+
+### Bekannte Probleme
+- Waffen- und Map-Konfiguration fehlen noch.
+
+### Nächster Schritt
+- `js/weapons.js` erstellen.
