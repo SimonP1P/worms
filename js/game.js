@@ -45,7 +45,7 @@ export class Game {
   }
 
   start() {
-    this.state = STATES.LOADING;
+    this.state = STATES.SETUP;
     this.terrain = new Terrain(createMap(MAPS[0]));
     this.worms = [
       new Worm({x:140,y:120,team:0,color:"#7cf06b",hat:"hat"}),
