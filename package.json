@@ -4,5 +4,5 @@
   "private":true,
   "type":"module",
   "scripts":{"start":"node server/server.js"},
-  "dependencies":{"ws":"^8.18.0"}
+  "dependencies":{"ws":"^8.21.0"}
 }
