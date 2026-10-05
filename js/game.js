@@ -120,6 +120,11 @@ export class Game {
   endTurn() {
     if (this.state !== STATES.PLAYING) return;
     if(this.mode==="online"){this.onlineClient?.endTurn();return;}
+    this.advanceTurn();
+  }
+
+  advanceTurn() {
+    if (this.mode === "online") return;
     this.state = STATES.TURN;
     this.team = this.team === 0 ? 1 : 0; this.audio?.play("turn");
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
@@ -181,7 +186,7 @@ export class Game {
     this.projectile = null;
     this.state = STATES.EXPLOSION; this.audio?.play("explosion");
     this.checkWinner();
-    if (this.state !== STATES.GAME_OVER) setTimeout(() => this.endTurn(), 450);
+    if (this.state !== STATES.GAME_OVER) setTimeout(() => { if (this.state === STATES.EXPLOSION) this.advanceTurn(); }, 450);
   }
 
   checkWinner() {
