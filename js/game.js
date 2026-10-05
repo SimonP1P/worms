@@ -19,6 +19,9 @@ export class Game {
     this.wind = 0;
     this.turn = 0;
     this.team = 0;
+    this.teamSize = 1;
+    this.turnDuration = 20;
+    this.turnRemaining = this.turnDuration;
     this.activeWorm = null;
     this.projectile = null;
     this.terrain = null;
@@ -44,16 +47,22 @@ export class Game {
     this.canvas.addEventListener("pointerdown", () => { if (this.state === STATES.PLAYING) this.fire(); });
   }
 
+  configureTeamSize(size) { this.teamSize = Math.max(1, Math.min(3, Number(size) || 1)); }
+
   start() {
     this.state = STATES.LOADING;
     const map = createMap(MAPS[0]);
     this.terrain = new Terrain(map);
-    this.worms = [
-      new Worm({x:map.spawns[0].x,y:map.spawns[0].y,team:0,color:"#7cf06b",hat:"hat",name:"Grün 1"}),
-      new Worm({x:map.spawns[1].x,y:map.spawns[1].y,team:1,color:"#ff7c8a",hat:"cap",name:"Rot 1"})
-    ];
+    this.worms = [];
+    const colors=[["#7cf06b","hat"],["#ff7c8a","cap"]];
+    for(let team=0;team<2;team++){
+      for(let i=0;i<this.teamSize;i++){
+        const base=map.spawns[team];
+        this.worms.push(new Worm({x:base.x+(team?1:-1)*i*28,y:base.y,team,color:colors[team][0],hat:colors[team][1],name:(team?"Rot ":"Grün ")+(i+1)}));
+      }
+    }
     this.wind = (Math.random() * 2 - 1) * 12;
-    this.team = 0; this.turn = 1; this.setActiveWorm(this.worms[0]);
+    this.team = 0; this.turn = 1; this.turnRemaining = this.turnDuration; this.setActiveWorm(this.worms[0]);
     this.state = STATES.PLAYING;
     if (!this.running) { this.running = true; requestAnimationFrame(t => this.loop(t)); }
   }
@@ -78,7 +87,13 @@ export class Game {
     this.setActiveWorm(alive[0] || null);
     this.turn++;
     this.wind = (Math.random() * 2 - 1) * 12;
+    this.turnRemaining = this.turnDuration;
     window.setTimeout(() => { if (this.state === STATES.TURN) this.state = STATES.PLAYING; }, 300);
+  }
+
+  selectWorm(wormId) {
+    const worm=this.worms.find(w=>w.name===wormId && w.alive && w.team===this.team);
+    if(worm && this.state===STATES.PLAYING) this.setActiveWorm(worm);
   }
 
   fire() {
@@ -92,6 +107,7 @@ export class Game {
   }
 
   update(dt) {
+    if (this.state === STATES.PLAYING) { this.turnRemaining=Math.max(0,this.turnRemaining-dt); if(this.turnRemaining===0)this.endTurn(); }
     if (this.state === STATES.PLAYING && this.activeWorm) {
       this.activeWorm.update(dt, this.terrain, this.keys);
     }
