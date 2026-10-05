@@ -24,6 +24,7 @@ export class Game {
     this.turnRemaining = this.turnDuration;
     this.activeWorm = null;
     this.projectile = null;
+    this.explosion = null;
     this.terrain = null;
     this.worms = [];
     this.weapon = Weapons.bazooka;
@@ -112,6 +113,7 @@ export class Game {
 
   update(dt) {
     if (this.state === STATES.PLAYING) { this.turnRemaining=Math.max(0,this.turnRemaining-dt); if(this.turnRemaining===0)this.endTurn(); }
+    if (this.state === STATES.EXPLOSION && this.explosion) this.explosion.age += dt;
     if (this.state === STATES.PLAYING && this.activeWorm) {
       this.activeWorm.update(dt, this.terrain, this.keys);
     }
@@ -127,6 +129,7 @@ export class Game {
     const radius = this.projectile.weapon.explosionRadius;
     this.terrain.destroyCircle(x,y,radius);
     for (const worm of this.worms) worm.applyExplosion(x,y,this.projectile.weapon.damage,radius);
+    this.explosion = {x,y,radius,age:0,duration:0.35};
     this.projectile = null;
     this.state = STATES.EXPLOSION;
     this.checkWinner();
@@ -150,6 +153,7 @@ export class Game {
     for (const w of this.worms) w.draw(c, w===this.activeWorm);
     if(this.state===STATES.PLAYING && this.activeWorm){ c.save(); c.strokeStyle="#fff"; c.lineWidth=2; c.setLineDash([6,5]); c.beginPath(); c.moveTo(this.activeWorm.x,this.activeWorm.y-8); c.lineTo(this.activeWorm.x+Math.cos(this.aimAngle)*90,this.activeWorm.y-8+Math.sin(this.aimAngle)*90); c.stroke(); c.restore(); }
     this.projectile?.draw(c);
+    if(this.explosion){ const p=Math.min(1,this.explosion.age/this.explosion.duration); c.save(); c.globalAlpha=1-p; c.fillStyle="#ffcf5a"; c.beginPath(); c.arc(this.explosion.x,this.explosion.y,this.explosion.radius*(0.45+0.55*p),0,Math.PI*2); c.fill(); c.restore(); if(p>=1)this.explosion=null; }
     if (this.state===STATES.PAUSED) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText("Pausiert",40,60); }
     if (this.state===STATES.GAME_OVER) { c.fillStyle="#0009"; c.fillRect(0,0,c.canvas.width,c.canvas.height); c.fillStyle="#fff"; c.font="32px sans-serif"; c.fillText(this.winnerText(),40,60); }
   }
