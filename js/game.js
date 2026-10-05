@@ -24,6 +24,9 @@ export class Game {
     this.wormConfigs = Array.from({length:6},()=>({color:"#7cf06b",hat:"none"}));
     this.turnDuration = 20;
     this.turnRemaining = this.turnDuration;
+    this.startTime = 0;
+    this.matchDuration = 0;
+    this.winnerTeam = null;
     this.activeWorm = null;
     this.projectile = null;
     this.explosion = null;
@@ -157,6 +160,8 @@ export class Game {
     for (const team of [0,1]) {
       if (!this.worms.some(w => w.alive && w.team === team)) {
         this.state = STATES.GAME_OVER;
+        this.winnerTeam = team === 0 ? 1 : 0;
+        this.matchDuration = (performance.now()-this.startTime)/1000;
         this.running = true;
       }
     }
@@ -177,8 +182,7 @@ export class Game {
   }
 
   winnerText() {
-    const winner=this.worms.find(w=>w.alive)?.team;
-    return winner===undefined ? "Unentschieden" : `Team ${winner+1} gewinnt!`;
+    return this.winnerTeam===null ? "Unentschieden" : "Team "+(this.winnerTeam+1)+" gewinnt!";
   }
 
   loop(time) {
