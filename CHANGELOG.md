@@ -768,3 +768,38 @@ Phase 7 – Wind
 
 ### Nächster Schritt
 - Phase 8: Explosionen, Schadensabstufung, Rückstoß und Tod vollständig ausbauen.
+
+
+---
+
+## Zyklus 25 – 2026-10-05
+
+### Phase
+Phase 8 – Explosionen und Schaden
+
+### Erledigt
+- Explosionen besitzen Position, Radius und animierte Lebensdauer.
+- Explosionsschaden wird radial nach Entfernung berechnet und durch Waffenwerte begrenzt.
+- Rückstoß wird richtungs- und entfernungsabhängig auf Würmer angewendet.
+- 0 HP setzt Würmer auf ausgeschieden; Auswahl filtert sie automatisch aus.
+- Ausgeschiedene Würmer erhalten eine sichtbare Markierung.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/game.js`
+- `js/worm.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Explosionsradius und Distanzfaktor geprüft.
+- Rückstoß folgt vom Explosionszentrum weg.
+- Todeszustand verhindert weitere Bewegung und Auswahl.
+
+### Bekannte Probleme
+- Mehrere gleichzeitige Explosionen sind noch nicht vorgesehen.
+
+### Nächster Schritt
+- Phase 9: Zerstörbares Terrain und Kollisionsanpassung nach Kratern vertiefen.
