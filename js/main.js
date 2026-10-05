@@ -17,6 +17,7 @@ document.querySelectorAll("[data-action]").forEach((button) => {
   });
 });
 document.querySelector("#end-turn").addEventListener("click", () => game.endTurn());
+document.querySelectorAll("[data-weapon]").forEach(button => button.addEventListener("click", () => game.selectWeapon(button.dataset.weapon)));
 document.querySelector("#back-menu").addEventListener("click", () => {
   game.stop();
   ui.showMenu();
