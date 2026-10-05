@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { WebSocketServer } from "ws";
+import { createMatch, applyAction, snapshot } from "./match.js";
 import { fileURLToPath } from "node:url";
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
@@ -12,7 +13,7 @@ const lobbies=new Map();
 function code(){return crypto.randomBytes(3).toString("hex").toUpperCase();}
 function send(ws,message){if(ws.readyState===1)ws.send(JSON.stringify(message));}
 function broadcast(lobby,message){for(const p of lobby.players)send(p.ws,message);}
-function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1,worms:[]},turn:0,state:"lobby"};}
+function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1,worms:[]},turn:0,state:"lobby",match:null};}
 
 const server=http.createServer((req,res)=>{
   const requestPath=decodeURIComponent((req.url||"/").split("?")[0]);
@@ -44,17 +45,17 @@ wss.on("connection",ws=>{
       return broadcast(lobby,{type:"match:config",config:lobby.config});
     }
     if(msg.type==="match:start" && lobby.players.length===2 && player.team===0){
-      lobby.state="playing";lobby.turn=0;return broadcast(lobby,{type:"match:start",config:lobby.config,turn:lobby.turn});
+      lobby.state="playing";lobby.match=createMatch(lobby.config);return broadcast(lobby,{type:"match:start",config:lobby.config,turn:lobby.match.turn,state:snapshot(lobby.match)});
     }
     if(msg.type==="turn:end"){
-      if(lobby.state!=="playing"||player.team!==lobby.turn)return send(ws,{type:"error",message:"Nicht dein Zug"});
-      lobby.turn=lobby.turn===0?1:0;return broadcast(lobby,{type:"turn",turn:lobby.turn});
+      if(!lobby.match||lobby.match.turn!==player.team)return send(ws,{type:"error",message:"Nicht dein Zug"});
+      applyAction(lobby.match,player.team,"turn:end"); return broadcast(lobby,{type:"state",state:snapshot(lobby.match)});
     }
     if(msg.type==="action"){
-      if(lobby.state!=="playing"||player.team!==lobby.turn)return send(ws,{type:"error",message:"Aktion nicht erlaubt"});
-      const allowed=["select_worm","select_weapon","aim","fire"];
-      if(!allowed.includes(msg.action))return send(ws,{type:"error",message:"Unbekannte Aktion"});
-      return broadcast(lobby,{type:"action",from:player.team,action:msg.action,payload:msg.payload||{}});
+      if(!lobby.match||lobby.match.turn!==player.team)return send(ws,{type:"error",message:"Aktion nicht erlaubt"});
+      const result=applyAction(lobby.match,player.team,msg.action,msg.payload||{});
+      if(!result.ok)return send(ws,{type:"error",message:result.error});
+      return broadcast(lobby,{type:"state",state:snapshot(lobby.match),from:player.team});
     }
   });
   ws.on("close",()=>{
