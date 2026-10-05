@@ -5,6 +5,8 @@ const canvas = document.querySelector("#game-canvas");
 const game = new Game(canvas);
 const ui = new UI(game);
 let selectedTeamSize = 1;
+let selectedMap = "meadow";
+document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; }));
 document.querySelectorAll("[data-team-size]").forEach(button => button.addEventListener("click", () => { selectedTeamSize = Number(button.dataset.teamSize); }));
 
 document.querySelectorAll("[data-action]").forEach((button) => {
@@ -12,6 +14,7 @@ document.querySelectorAll("[data-action]").forEach((button) => {
     if (button.dataset.action === "start-pc" || button.dataset.action === "start-local") {
       ui.showGame();
       game.configureTeamSize(selectedTeamSize);
+      game.configureMap(selectedMap);
       game.start();
     }
   });
