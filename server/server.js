@@ -12,7 +12,7 @@ const lobbies=new Map();
 function code(){return crypto.randomBytes(3).toString("hex").toUpperCase();}
 function send(ws,message){if(ws.readyState===1)ws.send(JSON.stringify(message));}
 function broadcast(lobby,message){for(const p of lobby.players)send(p.ws,message);}
-function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1},turn:0,state:"lobby"};}
+function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1,worms:[]},turn:0,state:"lobby"};}
 
 const server=http.createServer((req,res)=>{
   const requestPath=decodeURIComponent((req.url||"/").split("?")[0]);
@@ -40,7 +40,7 @@ wss.on("connection",ws=>{
     if(!player)return send(ws,{type:"error",message:"Zuerst einer Lobby beitreten"});
     const lobby=player.lobby;
     if(msg.type==="match:config" && player.team===0){
-      lobby.config={mapId:String(msg.mapId||"meadow"),teamSize:Math.max(1,Math.min(3,Number(msg.teamSize)||1))};
+      lobby.config={mapId:String(msg.mapId||"meadow"),teamSize:Math.max(1,Math.min(3,Number(msg.teamSize)||1)),worms:Array.isArray(msg.worms)?msg.worms.slice(0,6):[]};
       return broadcast(lobby,{type:"match:config",config:lobby.config});
     }
     if(msg.type==="match:start" && lobby.players.length===2 && player.team===0){
