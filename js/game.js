@@ -128,7 +128,7 @@ export class Game {
   resolveImpact(x,y) {
     const radius = this.projectile.weapon.explosionRadius;
     this.terrain.destroyCircle(x,y,radius);
-    for (const worm of this.worms) worm.applyExplosion(x,y,this.projectile.weapon.damage,radius);
+    for (const worm of this.worms) { worm.applyExplosion(x,y,this.projectile.weapon.damage,radius); if(worm.alive)this.terrain.settleEntity(worm); }
     this.explosion = {x,y,radius,age:0,duration:0.35};
     this.projectile = null;
     this.state = STATES.EXPLOSION;
