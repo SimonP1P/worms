@@ -5,7 +5,7 @@ import { Weapons } from "./weapons.js";
 import { MAPS, createMap } from "./maps.js";
 
 export const STATES = Object.freeze({
-  MENU:"main-menu", SETUP:"game-setup", PLAYING:"playing", PROJECTILE:"projectile-flying",
+  MENU:"main-menu", SETUP:"game-setup", LOADING:"loading", PLAYING:"playing", PROJECTILE:"projectile-flying",
   EXPLOSION:"explosion", TURN:"turn-transition", GAME_OVER:"game-over", PAUSED:"paused"
 });
 
@@ -45,7 +45,7 @@ export class Game {
   }
 
   start() {
-    this.state = STATES.SETUP;
+    this.state = STATES.LOADING;
     this.terrain = new Terrain(createMap(MAPS[0]));
     this.worms = [
       new Worm({x:140,y:120,team:0,color:"#7cf06b",hat:"hat"}),
@@ -66,12 +66,13 @@ export class Game {
 
   endTurn() {
     if (this.state !== STATES.PLAYING) return;
+    this.state = STATES.TURN;
     this.team = this.team === 0 ? 1 : 0;
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
     this.activeWorm = alive[0] || null;
     this.turn++;
     this.wind = (Math.random() * 2 - 1) * 12;
-    this.state = STATES.PLAYING;
+    window.setTimeout(() => { if (this.state === STATES.TURN) this.state = STATES.PLAYING; }, 300);
   }
 
   fire() {
