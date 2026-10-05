@@ -32,6 +32,7 @@ export class Game {
     this.matchDuration = 0;
     this.winnerTeam = null;
     this.onlineTeam = null;
+    this.onlineClient = null;
     this.activeWorm = null;
     this.projectile = null;
     this.explosion = null;
@@ -68,6 +69,15 @@ export class Game {
   configureWorms(configs) { this.wormConfigs=configs.map(c=>({color:c.color,hat:c.hat})); }
   configureMode(mode) { this.mode=mode==="pc"?"pc":"local"; }
   configureOnline(team) { this.mode="online"; this.onlineTeam=team; }
+  setOnlineClient(client) { this.onlineClient=client; }
+  applyServerState(snapshot) {
+    if(!snapshot)return;
+    if(this.terrain && Array.isArray(snapshot.terrain)) this.terrain.surface=snapshot.terrain.slice();
+    for(const remote of snapshot.worms||[]){const local=this.worms.find(w=>w.name===remote.name||w.team===remote.team&&w.name===remote.name);if(local){local.x=remote.x;local.y=remote.y;local.hp=remote.hp;local.alive=remote.alive;local.color=remote.color;local.hat=remote.hat;}}
+    this.team=snapshot.turn; this.wind=snapshot.wind; this.state=snapshot.state==="game-over"?STATES.GAME_OVER:STATES.PLAYING;
+    const active=this.worms.find(w=>w.alive&&w.team===snapshot.turn&&w.name===snapshot.worms.find(x=>x.id===snapshot.activeWormId)?.name); this.setActiveWorm(active||this.worms.find(w=>w.alive&&w.team===snapshot.turn)||null);
+    if(snapshot.state==="game-over")this.winnerTeam=snapshot.winner;
+  }
   setRemoteTurn(team) { this.team=team; const alive=this.worms.filter(w=>w.alive&&w.team===team); this.setActiveWorm(alive[0]||null); this.turnRemaining=this.turnDuration; this.state=STATES.PLAYING; }
   configureDifficulty(level) { this.aiDifficulty=["easy","normal","hard"].includes(level)?level:"normal"; this.ai=new AIController(this,this.aiDifficulty); }
 
@@ -103,6 +113,7 @@ export class Game {
 
   endTurn() {
     if (this.state !== STATES.PLAYING) return;
+    if(this.mode==="online"){this.onlineClient?.endTurn();return;}
     this.state = STATES.TURN;
     this.team = this.team === 0 ? 1 : 0;
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
@@ -115,7 +126,7 @@ export class Game {
 
   selectWorm(wormId) {
     const worm=this.worms.find(w=>w.name===wormId && w.alive && w.team===this.team);
-    if(worm && this.state===STATES.PLAYING) this.setActiveWorm(worm);
+    if(worm && this.state===STATES.PLAYING) { this.setActiveWorm(worm); if(this.mode==="online")this.onlineClient?.action("select_worm",{wormId:this.worms.find(x=>x===worm)?.name}); }
   }
 
   selectWeapon(id) {
@@ -125,6 +136,7 @@ export class Game {
 
   fire() {
     if (!this.activeWorm || this.state !== STATES.PLAYING) return;
+    if(this.mode==="online"){this.onlineClient?.action("fire",{angle:this.aimAngle,power:this.shotPower,weapon:this.weapon.id,targetX:this.pointer.x});return;}
     const dx = this.pointer.x - this.activeWorm.x;
     const dy = this.pointer.y - this.activeWorm.y;
     const length = Math.max(1, Math.hypot(dx,dy));
@@ -142,6 +154,7 @@ export class Game {
   update(dt) {
     if (this.state === STATES.PLAYING) { this.turnRemaining=Math.max(0,this.turnRemaining-dt); if(this.turnRemaining===0)this.endTurn(); }
     if (this.state === STATES.EXPLOSION && this.explosion) this.explosion.age += dt;
+    if (this.mode==="online") return;
     if (this.state === STATES.PLAYING && this.activeWorm) {
       this.activeWorm.update(dt, this.terrain, this.keys);
     }
