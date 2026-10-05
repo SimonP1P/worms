@@ -906,3 +906,38 @@ Phase 11 – Vier Welten
 
 ### Nächster Schritt
 - Phase 12: Wurmfarben und Kopfbedeckungen als echte Match-Konfiguration auswählbar machen.
+
+
+---
+
+## Zyklus 29 – 2026-10-05
+
+### Phase
+Phase 12 – Charakter-Anpassung
+
+### Erledigt
+- Wurmfarben mit sechs eigenen Farboptionen und Links-/Rechtspfeilen auswählbar gemacht.
+- Kopfbedeckungen Keine, Hut, Cap und Mütze auswählbar gemacht.
+- Für bis zu sechs konfigurierte Würmer werden Farbe und Kopfbedeckung separat gespeichert.
+- Konfiguration wird beim Matchstart in die Worm-Entities übernommen und ist im Spiel sichtbar.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Vier Kopfbedeckungswerte gegen Worm-Rendering abgeglichen.
+- Farb-/Hat-Auswahl zyklisch auf gültige Optionen begrenzt.
+- Matchstart übernimmt gespeicherte Konfigurationen.
+
+### Bekannte Probleme
+- Vorschau ist text-/farbwertbasiert; visuelle Politur folgt später.
+
+### Nächster Schritt
+- Phase 13: Hauptmenü und Match-Setup als vollständigen Konfigurationsfluss ausbauen.
