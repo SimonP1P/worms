@@ -314,23 +314,23 @@ Spieler müssen Wind bei der Zielberechnung berücksichtigen.
 
 ## 9.1 Terrain-Datenmodell
 
-- [ ] Terrain als zerstörbare Datenstruktur speichern
-- [ ] begehbare Bereiche erkennen
-- [ ] feste Bereiche erkennen
+- [x] Terrain als zerstörbare Datenstruktur speichern
+- [x] begehbare Bereiche erkennen
+- [x] feste Bereiche erkennen
 
 ## 9.2 Explosionen im Terrain
 
-- [ ] Explosionsradius auf Terrain anwenden
-- [ ] Terrain innerhalb des Radius entfernen
-- [ ] Krater erzeugen
-- [ ] Terrain nach Explosion aktualisieren
+- [x] Explosionsradius auf Terrain anwenden
+- [x] Terrain innerhalb des Radius entfernen
+- [x] Krater erzeugen
+- [x] Terrain nach Explosion aktualisieren
 
 ## 9.3 Kollisionen nach Zerstörung
 
-- [ ] neue Bodenhöhe berechnen
-- [ ] Würmer auf neue Oberfläche setzen
-- [ ] Projektil-Kollision aktualisieren
-- [ ] keine unsichtbaren Kollisionen zurücklassen
+- [x] neue Bodenhöhe berechnen
+- [x] Würmer auf neue Oberfläche setzen
+- [x] Projektil-Kollision aktualisieren
+- [x] keine unsichtbaren Kollisionen zurücklassen
 
 ## 9.4 Ergebnis
 
