@@ -27,7 +27,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 
 ## 1.1 Repository vorbereiten
 
-- [ ] Repository-Struktur prüfen
+- [x] Repository-Struktur prüfen
 - [ ] `README.md` prüfen
 - [ ] `ROADMAP.md` anlegen
 - [ ] `.gitignore` anlegen
@@ -210,6 +210,10 @@ Zu Beginn jedes eigenen Zuges:
 - [ ] ausgewählten Wurm aktivieren
 
 ## 5.5 Ergebnis
+
+Zwei Teams können abwechselnd spielen und vor jedem Zug einen beliebigen eigenen lebenden Wurm auswählen.
+
+## 5.6 Ergebnis
 
 Zwei Teams können abwechselnd spielen und vor jedem Zug einen beliebigen eigenen lebenden Wurm auswählen.
 
