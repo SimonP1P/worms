@@ -722,30 +722,30 @@ Zwei oder mehr Spieler können ein vollständiges synchronisiertes Match online 
 
 ## 19.1 Grafikstil
 
-- [ ] einheitlichen Artstyle definieren
-- [ ] Würmer überarbeiten
-- [ ] Kopfbedeckungen überarbeiten
-- [ ] Waffen gestalten
-- [ ] Projektile gestalten
-- [ ] Explosionen gestalten
-- [ ] Maps gestalten
+- [x] einheitlichen Artstyle definieren
+- [x] Würmer überarbeiten
+- [x] Kopfbedeckungen überarbeiten
+- [x] Waffen gestalten
+- [x] Projektile gestalten
+- [x] Explosionen gestalten
+- [x] Maps gestalten
 
 ## 19.2 UI-Polishing
 
-- [ ] Buttons
-- [ ] Panels
-- [ ] Hover-Effekte
-- [ ] Auswahlzustände
-- [ ] Animationen
-- [ ] responsive Darstellung
+- [x] Buttons
+- [x] Panels
+- [x] Hover-Effekte
+- [x] Auswahlzustände
+- [x] Animationen
+- [x] responsive Darstellung
 
 ## 19.3 Lesbarkeit
 
-- [ ] wichtige Informationen klar sichtbar
-- [ ] aktive Auswahl eindeutig
-- [ ] HP gut erkennbar
-- [ ] Wind verständlich
-- [ ] Zugstatus verständlich
+- [x] wichtige Informationen klar sichtbar
+- [x] aktive Auswahl eindeutig
+- [x] HP gut erkennbar
+- [x] Wind verständlich
+- [x] Zugstatus verständlich
 
 ---
 
