@@ -25,7 +25,8 @@ const onlineScreen=document.querySelector("#online-screen");
 const onlineStatus=document.querySelector("#online-status");
 const onlineCode=document.querySelector("#online-code");
 const onlineCodeDisplay=document.querySelector("#online-code-display");
-const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:joined"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(onlineTeam??0);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);}});
+const onlinePlayers=document.querySelector("#online-players");
+const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:joined"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:state"&&onlinePlayers)onlinePlayers.textContent="Spieler: "+msg.players.length+"/2";if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(onlineTeam??0);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);}});
 
 let selectedTeamSize = 1;
 let selectedMode = "pc";
@@ -39,7 +40,7 @@ document.querySelectorAll("[data-team-size]").forEach(button => button.addEventL
 
 document.querySelector("#online-create").addEventListener("click",()=>online.createLobby());
 document.querySelector("#online-join").addEventListener("click",()=>online.joinLobby(onlineCode.value));
-document.querySelector("#online-start").addEventListener("click",()=>{online.configure({mapId:selectedMap,teamSize:selectedTeamSize});online.startMatch();});
+document.querySelector("#online-start").addEventListener("click",()=>{online.configure({mapId:selectedMap,teamSize:selectedTeamSize,worms:wormConfigs});online.startMatch();});
 document.querySelector("#online-back").addEventListener("click",()=>{onlineScreen.classList.add("is-hidden");ui.showMenu();});
 document.querySelectorAll("[data-action]").forEach((button) => {
   button.addEventListener("click", () => {
