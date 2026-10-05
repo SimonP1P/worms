@@ -21,12 +21,14 @@ for(let i=0;i<6;i++){
 
 const game = new Game(canvas);
 const ui = new UI(game);
+
 const onlineScreen=document.querySelector("#online-screen");
 const onlineStatus=document.querySelector("#online-status");
 const onlineCode=document.querySelector("#online-code");
 const onlineCodeDisplay=document.querySelector("#online-code-display");
 const onlinePlayers=document.querySelector("#online-players");
-const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:joined"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:state"&&onlinePlayers)onlinePlayers.textContent="Spieler: "+msg.players.length+"/2";if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(onlineTeam??0);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);}});
+const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:joined"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:state"&&onlinePlayers)onlinePlayers.textContent="Spieler: "+msg.players.length+"/2";if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(onlineTeam??0);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);if(msg.type==="state")game.applyServerState(msg.state);}});
+game.setOnlineClient(online);
 
 let selectedTeamSize = 1;
 let selectedMode = "pc";
