@@ -243,3 +243,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/main.js` als Initialisierungspunkt erstellen.
+
+
+---
+
+## Zyklus 8 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `js/main.js` als App-Einstiegspunkt erstellt.
+- Menüaktionen, Game-Start, Zugende und Rückkehr zum Menü verdrahtet.
+
+### Neue Dateien
+- `js/main.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Modulimporte und DOM-Selektoren gegen `index.html` abgeglichen.
+
+### Bekannte Probleme
+- Die importierten Module werden im nächsten Zyklus implementiert.
+
+### Nächster Schritt
+- `js/game.js` implementieren.
