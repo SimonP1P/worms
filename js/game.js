@@ -46,10 +46,11 @@ export class Game {
 
   start() {
     this.state = STATES.LOADING;
-    this.terrain = new Terrain(createMap(MAPS[0]));
+    const map = createMap(MAPS[0]);
+    this.terrain = new Terrain(map);
     this.worms = [
-      new Worm({x:140,y:120,team:0,color:"#7cf06b",hat:"hat"}),
-      new Worm({x:820,y:120,team:1,color:"#ff7c8a",hat:"cap"})
+      new Worm({x:map.spawns[0].x,y:map.spawns[0].y,team:0,color:"#7cf06b",hat:"hat",name:"Grün 1"}),
+      new Worm({x:map.spawns[1].x,y:map.spawns[1].y,team:1,color:"#ff7c8a",hat:"cap",name:"Rot 1"})
     ];
     this.wind = (Math.random() * 2 - 1) * 12;
     this.team = 0; this.turn = 1; this.activeWorm = this.worms[0];
