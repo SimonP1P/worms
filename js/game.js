@@ -118,7 +118,7 @@ export class Game {
     if (this.state !== STATES.PLAYING) return;
     if(this.mode==="online"){this.onlineClient?.endTurn();return;}
     this.state = STATES.TURN;
-    this.team = this.team === 0 ? 1 : 0;
+    this.team = this.team === 0 ? 1 : 0; this.audio?.play("turn");
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
     this.setActiveWorm(alive[0] || null);
     this.turn++;
@@ -185,7 +185,7 @@ export class Game {
     for (const team of [0,1]) {
       if (!this.worms.some(w => w.alive && w.team === team)) {
         this.state = STATES.GAME_OVER;
-        this.winnerTeam = team === 0 ? 1 : 0;
+        this.winnerTeam = team === 0 ? 1 : 0; this.audio?.play("win");
         this.matchDuration = (performance.now()-this.startTime)/1000;
         this.running = true;
       }
