@@ -469,3 +469,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/ai.js` erstellen.
+
+
+---
+
+## Zyklus 16 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `AIController` als isolierte KI-Schnittstelle vorbereitet.
+- Wurm-, Ziel- und Waffenwahl sowie ein einfacher Schussablauf sind gekapselt.
+
+### Neue Dateien
+- `js/ai.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- KI-Schnittstelle auf die bestehenden Game-APIs abgeglichen.
+
+### Bekannte Probleme
+- KI wird erst in Phase 16 vollständig in den Turn-Flow integriert.
+
+### Nächster Schritt
+- Asset-Verzeichnisse mit Platzhalterdateien anlegen.
