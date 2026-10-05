@@ -8,6 +8,7 @@ export class UI {
     this.hp=document.querySelector("#hud-hp");
     this.wind=document.querySelector("#hud-wind");
     this.weapon=document.querySelector("#hud-weapon");
+    this.wormSelection=document.querySelector("#worm-selection");
     window.setInterval(()=>this.refresh(),100);
   }
   showMenu(){this.menu.classList.remove("is-hidden");this.screen.classList.add("is-hidden");}
@@ -19,5 +20,16 @@ export class UI {
     this.hp.textContent=w?String(Math.max(0,Math.round(w.hp))):"—";
     this.wind.textContent=g.wind.toFixed(1);
     this.weapon.textContent=g.weapon?.name||"—";
+    this.renderWormSelection();
+  }
+  renderWormSelection(){
+    if(!this.wormSelection)return;
+    this.wormSelection.replaceChildren();
+    for(const w of this.game.worms.filter(x=>x.team===this.game.team)){
+      const b=document.createElement("button"); b.type="button"; b.textContent=w.name+(w.alive?"":" (ausgeschieden)"); b.disabled=!w.alive;
+      if(w===this.game.activeWorm)b.setAttribute("aria-pressed","true");
+      b.addEventListener("click",()=>this.game.selectWorm(w.name)); this.wormSelection.appendChild(b);
+    }
+  }
   }
 }
