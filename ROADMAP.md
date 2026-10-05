@@ -359,9 +359,9 @@ Explosionen verändern die Map dauerhaft.
 
 ## 10.3 Granate
 
-- [ ] Projektil
+- [x] Projektil
 - [x] Gravitation
-- [ ] Explosion
+- [x] Explosion
 - [ ] Schaden
 - [x] Terrainzerstörung
 
@@ -632,7 +632,7 @@ Diese Phase kommt erst, wenn das lokale Spiel stabil funktioniert.
 - [x] Game-Server erstellen
 - [x] Client/Server-Kommunikation definieren
 - [x] WebSocket-Verbindung einrichten
-- [ ] Server als autoritative Instanz verwenden
+- [x] Server als autoritative Instanz verwenden
 
 ## 17.2 Lobby
 
@@ -653,25 +653,25 @@ Diese Phase kommt erst, wenn das lokale Spiel stabil funktioniert.
 
 Server muss mindestens synchronisieren:
 
-- [ ] Spieler
-- [ ] Teams
-- [ ] Würmer
-- [ ] Positionen
-- [ ] Lebenspunkte
-- [ ] aktive Würmer
-- [ ] aktuelle Waffe
+- [x] Spieler
+- [x] Teams
+- [x] Würmer
+- [x] Positionen
+- [x] Lebenspunkte
+- [x] aktive Würmer
+- [x] aktuelle Waffe
 - [ ] Projektil
 - [ ] Explosion
-- [ ] Terrainänderungen
-- [ ] Wind
-- [ ] aktueller Zug
-- [ ] Matchstatus
+- [x] Terrainänderungen
+- [x] Wind
+- [x] aktueller Zug
+- [x] Matchstatus
 
 ## 17.5 Netzwerk-Sicherheit
 
-- [ ] Client-Eingaben validieren
-- [ ] wichtige Spielregeln serverseitig prüfen
-- [ ] ungültige Aktionen ablehnen
+- [x] Client-Eingaben validieren
+- [x] wichtige Spielregeln serverseitig prüfen
+- [x] ungültige Aktionen ablehnen
 - [ ] Manipulation möglichst verhindern
 
 ## 17.6 Verbindungsprobleme
