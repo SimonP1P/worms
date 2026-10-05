@@ -8,6 +8,7 @@ export class UI {
     this.hp=document.querySelector("#hud-hp");
     this.wind=document.querySelector("#hud-wind");
     this.weapon=document.querySelector("#hud-weapon");
+    this.power=document.querySelector("#hud-power");
     this.wormSelection=document.querySelector("#worm-selection");
     window.setInterval(()=>this.refresh(),100);
   }
@@ -20,6 +21,7 @@ export class UI {
     this.hp.textContent=w?String(Math.max(0,Math.round(w.hp))):"—";
     this.wind.textContent=g.wind.toFixed(1);
     this.weapon.textContent=g.weapon?.name||"—";
+    this.power.textContent=Math.round(g.shotPower*100)+"%";
     this.renderWormSelection();
   }
   renderWormSelection(){
