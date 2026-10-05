@@ -39,7 +39,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [x] `css/style.css` erstellen
 - [x] `js/main.js` erstellen
 - [x] `js/game.js` erstellen
-- [ ] `js/ui.js` erstellen
+- [x] `js/ui.js` erstellen
 - [ ] `js/worm.js` erstellen
 - [ ] `js/terrain.js` erstellen
 - [ ] `js/projectile.js` erstellen
@@ -55,7 +55,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [ ] Spielfläche definieren
 - [ ] Hauptmenü vorbereiten
 - [ ] Spielbereich vorbereiten
-- [ ] HUD-Bereich vorbereiten
+- [x] HUD-Bereich vorbereiten
 - [x] responsive Grundstruktur erstellen
 
 ## 1.4 Ergebnis
