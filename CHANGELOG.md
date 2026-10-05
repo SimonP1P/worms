@@ -661,3 +661,40 @@ Phase 4 – Würmer
 
 ### Nächster Schritt
 - Phase 5: Teams, Teamgrößen, Zugverwaltung und freie Wurmauswahl pro Zug implementieren.
+
+
+---
+
+## Zyklus 22 – 2026-10-05
+
+### Phase
+Phase 5 – Teams und Zug-System
+
+### Erledigt
+- Zwei Teams und konfigurierbare Teamgrößen 1–3 implementiert.
+- Vor jedem Zug werden lebende eigene Würmer als auswählbare Buttons angezeigt.
+- Aktiver Wurm kann innerhalb des aktuellen Teams gewechselt werden.
+- Zugdauer von 20 Sekunden, Zugstart, Zugende und Teamwechsel integriert.
+- Ausgeschiedene Würmer werden deaktiviert.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/game.js`
+- `js/ui.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Teamgrößen 1/2/3 werden auf den zulässigen Bereich begrenzt.
+- Wurmauswahl wird auf lebende Würmer des aktiven Teams beschränkt.
+- Zugtimer endet automatisch und wechselt das Team.
+
+### Bekannte Probleme
+- Teamgröße wird derzeit vor dem Match gewählt; eine vollständige Setup-Ansicht folgt in Phase 13.
+
+### Nächster Schritt
+- Phase 6: Zielsystem, Schussstärke und Projektil-Flugphysik vervollständigen.
