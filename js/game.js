@@ -182,13 +182,13 @@ export class Game {
   }
 
   checkWinner() {
-    for (const team of [0,1]) {
-      if (!this.worms.some(w => w.alive && w.team === team)) {
-        this.state = STATES.GAME_OVER;
-        this.winnerTeam = team === 0 ? 1 : 0; this.audio?.play("win");
-        this.matchDuration = (performance.now()-this.startTime)/1000;
-        this.running = true;
-      }
+    const aliveTeams=[0,1].filter(team=>this.worms.some(w=>w.alive&&w.team===team));
+    if(aliveTeams.length<=1){
+      this.state=STATES.GAME_OVER;
+      this.winnerTeam=aliveTeams.length===1?aliveTeams[0]:null;
+      this.matchDuration=(performance.now()-this.startTime)/1000;
+      this.running=true;
+      this.audio?.play(this.winnerTeam===null?"death":"win");
     }
   }
 
