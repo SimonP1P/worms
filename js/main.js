@@ -9,6 +9,7 @@ const hats=["none","hat","cap","beanie"];
 const hatNames=["Keine","Hut","Cap","Mütze"];
 const wormConfigs=Array.from({length:6},()=>({color:colors[0],hat:"none"}));
 const configRoot=document.querySelector("#worm-configs");
+if(!canvas || !configRoot) throw new Error("Worms Arena: erforderliche HTML-Elemente fehlen.");
 for(let i=0;i<6;i++){
   const row=document.createElement("div");
   row.className="worm-config";
@@ -25,7 +26,7 @@ const ui = new UI(game);
 const audio=new AudioManager();
 document.addEventListener("click",e=>{if(e.target.closest("button"))audio.play("click");});
 game.setAudio(audio);
-document.querySelector("#audio-toggle").addEventListener("click",()=>{audio.setEnabled(!audio.enabled);audio.play("click");});
+document.querySelector("#audio-toggle")?.addEventListener("click",()=>{audio.setEnabled(!audio.enabled);audio.play("click");});
 
 const onlineScreen=document.querySelector("#online-screen");
 const onlineStatus=document.querySelector("#online-status");
@@ -45,10 +46,10 @@ const mapPreview = document.querySelector("#map-preview");
 document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; if(mapPreview) mapPreview.textContent = button.textContent; }));
 document.querySelectorAll("[data-team-size]").forEach(button => button.addEventListener("click", () => { selectedTeamSize = Number(button.dataset.teamSize); }));
 
-document.querySelector("#online-create").addEventListener("click",()=>online.createLobby());
-document.querySelector("#online-join").addEventListener("click",()=>online.joinLobby(onlineCode.value));
-document.querySelector("#online-start").addEventListener("click",()=>{online.configure({mapId:selectedMap,teamSize:selectedTeamSize,worms:wormConfigs});online.startMatch();});
-document.querySelector("#online-back").addEventListener("click",()=>{onlineScreen.classList.add("is-hidden");ui.showMenu();});
+document.querySelector("#online-create")?.addEventListener("click",()=>online.createLobby());
+document.querySelector("#online-join")?.addEventListener("click",()=>online.joinLobby(onlineCode?.value||""));
+document.querySelector("#online-start")?.addEventListener("click",()=>{online.configure({mapId:selectedMap,teamSize:selectedTeamSize,worms:wormConfigs});online.startMatch();});
+document.querySelector("#online-back")?.addEventListener("click",()=>{onlineScreen?.classList.add("is-hidden");ui.showMenu();});
 document.querySelectorAll("[data-action]").forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.action === "start-pc" || button.dataset.action === "start-local") {
@@ -64,11 +65,11 @@ document.querySelectorAll("[data-action]").forEach((button) => {
     } else if(button.dataset.action==="start-online"){ document.querySelector("#menu-screen").classList.add("is-hidden"); onlineScreen.classList.remove("is-hidden"); online.connect(); } else if(button.dataset.action==="settings"){ audio.setEnabled(!audio.enabled); } else if(button.dataset.action==="credits"){ alert("Worms Arena – eigenständiges Browsergame."); }
   });
 });
-document.querySelector("#shoot-button").addEventListener("click", () => game.fire());
-document.querySelector("#end-turn").addEventListener("click", () => game.endTurn());
+document.querySelector("#shoot-button")?.addEventListener("click", () => game.fire());
+document.querySelector("#end-turn")?.addEventListener("click", () => game.endTurn());
 document.querySelectorAll("[data-weapon]").forEach(button => button.addEventListener("click", () => game.selectWeapon(button.dataset.weapon)));
-document.querySelector("#replay-button").addEventListener("click", () => { game.start(); });
-document.querySelector("#back-menu").addEventListener("click", () => {
+document.querySelector("#replay-button")?.addEventListener("click", () => { game.start(); });
+document.querySelector("#back-menu")?.addEventListener("click", () => {
   game.stop();
   ui.showMenu();
 });
