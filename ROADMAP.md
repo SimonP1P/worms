@@ -52,9 +52,9 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 ## 1.3 Basis-HTML
 
 - [x] Canvas einbauen
-- [ ] Spielfläche definieren
-- [ ] Hauptmenü vorbereiten
-- [ ] Spielbereich vorbereiten
+- [x] Spielfläche definieren
+- [x] Hauptmenü vorbereiten
+- [x] Spielbereich vorbereiten
 - [x] HUD-Bereich vorbereiten
 - [x] responsive Grundstruktur erstellen
 
