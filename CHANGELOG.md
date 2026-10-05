@@ -698,3 +698,40 @@ Phase 5 – Teams und Zug-System
 
 ### Nächster Schritt
 - Phase 6: Zielsystem, Schussstärke und Projektil-Flugphysik vervollständigen.
+
+
+---
+
+## Zyklus 23 – 2026-10-05
+
+### Phase
+Phase 6 – Zielen und Schießen
+
+### Erledigt
+- Mauszielrichtung mit Winkelberechnung und visueller Ziellinie umgesetzt.
+- Schussstärke zwischen 15 % und 100 % geführt, per Mausdistanz gesetzt und per Mausrad feinjustierbar.
+- Schussstärke im HUD angezeigt.
+- Projektilstart, Geschwindigkeit, Flugrichtung, Gravitation und Windbeeinflussung verbunden.
+- Projektilrenderring und Map-Grenzbehandlung umgesetzt.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/game.js`
+- `js/projectile.js`
+- `js/ui.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Zielwinkel wird aus der aktuellen Mausposition berechnet.
+- Schussstärke wird begrenzt und im HUD gespiegelt.
+- Projektil aktualisiert Position und Geschwindigkeit anhand von Delta-Time.
+
+### Bekannte Probleme
+- Projektil-Kollision ist derzeit auf Terrain/Map-Grenzen beschränkt; Wurm-Kollision folgt über Explosion.
+
+### Nächster Schritt
+- Phase 7: Wind-System sichtbar machen und sauber in die Projektilphysik integrieren.
