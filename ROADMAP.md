@@ -362,14 +362,14 @@ Explosionen verändern die Map dauerhaft.
 - [x] Projektil
 - [x] Gravitation
 - [x] Explosion
-- [ ] Schaden
+- [x] Schaden
 - [x] Terrainzerstörung
 
 ## 10.4 Dynamit
 
 - [x] Platzierung/Positionierung
 - [x] Countdown
-- [ ] Explosion
+- [x] Explosion
 - [ ] Schaden
 - [ ] Terrainzerstörung
 
@@ -661,7 +661,7 @@ Server muss mindestens synchronisieren:
 - [x] aktive Würmer
 - [x] aktuelle Waffe
 - [ ] Projektil
-- [ ] Explosion
+- [x] Explosion
 - [x] Terrainänderungen
 - [x] Wind
 - [x] aktueller Zug
@@ -691,30 +691,30 @@ Zwei oder mehr Spieler können ein vollständiges synchronisiertes Match online 
 
 ## 18.1 Sounds
 
-- [ ] Schuss-Sound
+- [x] Schuss-Sound
 - [ ] Explosion
-- [ ] Treffer
+- [x] Treffer
 - [ ] Schaden
-- [ ] Tod
-- [ ] UI-Klicks
-- [ ] Zugwechsel
-- [ ] Sieg
+- [x] Tod
+- [x] UI-Klicks
+- [x] Zugwechsel
+- [x] Sieg
 
 ## 18.2 Animationen
 
-- [ ] Wurmbewegung
-- [ ] Trefferanimation
+- [x] Wurmbewegung
+- [x] Trefferanimation
 - [ ] Explosion
-- [ ] Rückstoß
-- [ ] Tod
-- [ ] UI-Übergänge
+- [x] Rückstoß
+- [x] Tod
+- [x] UI-Übergänge
 
 ## 18.3 Musik
 
-- [ ] Menü-Musik
-- [ ] Match-Musik
-- [ ] Lautstärkeregelung
-- [ ] Musik an/aus
+- [x] Menü-Musik
+- [x] Match-Musik
+- [x] Lautstärkeregelung
+- [x] Musik an/aus
 
 ---
 
