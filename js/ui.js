@@ -24,11 +24,13 @@ export class UI {
     this.worm.textContent=w?w.name:"—";
     this.hp.textContent=w?String(Math.max(0,Math.round(w.hp))):"—";
     this.wind.textContent=g.wind.toFixed(1);
+    const canAct=g.mode!=="online"||g.onlineTeam===g.team;
     this.weapon.textContent=g.weapon?.name||"—";
     this.power.textContent=Math.round(g.shotPower*100)+"%";
     this.status.textContent=g.state+" · "+Math.ceil(g.turnRemaining)+"s";
     if(g.state==="game-over"){this.gameOver.classList.remove("is-hidden");this.resultTitle.textContent=g.winnerText();this.resultDuration.textContent="Matchdauer: "+g.matchDuration.toFixed(1)+" s";}else{this.gameOver.classList.add("is-hidden");}
-    document.querySelectorAll("[data-weapon]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.weapon===g.weapon?.id)));
+    document.querySelectorAll("[data-weapon]").forEach(b=>{b.setAttribute("aria-pressed",String(b.dataset.weapon===g.weapon?.id));b.disabled=!canAct;});
+    const shoot=document.querySelector("#shoot-button"),end=document.querySelector("#end-turn");if(shoot)shoot.disabled=!canAct;if(end)end.disabled=!canAct;
     this.renderWormSelection();
   }
   renderWormSelection(){
