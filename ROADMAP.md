@@ -69,30 +69,30 @@ Am Ende dieser Phase muss eine leere, sauber strukturierte Browser-Spielseite st
 ## 2.1 Game Loop
 
 - [ ] `requestAnimationFrame` einrichten
-- [ ] Update-Schritt erstellen
-- [ ] Render-Schritt erstellen
-- [ ] Delta-Time berücksichtigen
-- [ ] Spiel pausieren können
+- [x] Update-Schritt erstellen
+- [x] Render-Schritt erstellen
+- [x] Delta-Time berücksichtigen
+- [x] Spiel pausieren können
 
 ## 2.2 Spielzustände
 
 Folgende Zustände definieren:
 
-- [ ] Main Menu
-- [ ] Game Setup
-- [ ] Loading
-- [ ] Playing
-- [ ] Projectile Flying
-- [ ] Explosion
-- [ ] Turn Transition
-- [ ] Game Over
+- [x] Main Menu
+- [x] Game Setup
+- [x] Loading
+- [x] Playing
+- [x] Projectile Flying
+- [x] Explosion
+- [x] Turn Transition
+- [x] Game Over
 
 ## 2.3 Input-System
 
-- [ ] Maus-Position erfassen
-- [ ] Mausklicks erfassen
-- [ ] Tastatur-Eingaben erfassen
-- [ ] Eingaben abhängig vom Spielzustand aktivieren/deaktivieren
+- [x] Maus-Position erfassen
+- [x] Mausklicks erfassen
+- [x] Tastatur-Eingaben erfassen
+- [x] Eingaben abhängig vom Spielzustand aktivieren/deaktivieren
 
 ## 2.4 Ergebnis
 
