@@ -135,38 +135,38 @@ Eine vollständige Test-Map wird im Browser angezeigt und besitzt gültige Spawn
 
 Jeder Wurm benötigt mindestens:
 
-- [ ] Position
-- [ ] Geschwindigkeit
-- [ ] Lebenspunkte
-- [ ] Team-ID
-- [ ] Farbe
-- [ ] Kopfbedeckung
-- [ ] lebendig/ausgeschieden
-- [ ] aktiver/inaktiver Zustand
+- [x] Position
+- [x] Geschwindigkeit
+- [x] Lebenspunkte
+- [x] Team-ID
+- [x] Farbe
+- [x] Kopfbedeckung
+- [x] lebendig/ausgeschieden
+- [x] aktiver/inaktiver Zustand
 
 ## 4.2 Darstellung
 
-- [ ] Wurm zeichnen
-- [ ] Farbe darstellen
-- [ ] Kopf darstellen
-- [ ] Kopfbedeckung darstellen
-- [ ] aktiven Wurm hervorheben
+- [x] Wurm zeichnen
+- [x] Farbe darstellen
+- [x] Kopf darstellen
+- [x] Kopfbedeckung darstellen
+- [x] aktiven Wurm hervorheben
 
 ## 4.3 Physik
 
-- [ ] Gravitation
-- [ ] Boden-Kollision
-- [ ] Schwerkraft nach Fall
-- [ ] einfache Bewegung
-- [ ] Richtungswechsel
+- [x] Gravitation
+- [x] Boden-Kollision
+- [x] Schwerkraft nach Fall
+- [x] einfache Bewegung
+- [x] Richtungswechsel
 
 ## 4.4 Bewegung
 
-- [ ] links bewegen
-- [ ] rechts bewegen
-- [ ] springen
-- [ ] Bewegung begrenzen
-- [ ] Terrain-Kollision beachten
+- [x] links bewegen
+- [x] rechts bewegen
+- [x] springen
+- [x] Bewegung begrenzen
+- [x] Terrain-Kollision beachten
 
 ## 4.5 Ergebnis
 
