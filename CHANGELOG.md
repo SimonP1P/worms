@@ -976,3 +976,40 @@ Phase 13 – Hauptmenü und Match-Setup
 
 ### Nächster Schritt
 - Phase 14: HUD, Waffen-/Wurmauswahl und Zugübergänge weiter ausbauen.
+
+
+---
+
+## Zyklus 31 – 2026-10-05
+
+### Phase
+Phase 14 – HUD und Benutzeroberfläche
+
+### Erledigt
+- HUD zeigt Team, aktiven Wurm, HP, Wind, Waffe, Schussstärke und Status.
+- Waffenauswahl markiert die aktive Waffe und erlaubt Wechsel vor dem Schuss.
+- Schießen-Button ergänzt.
+- Wurmauswahl zeigt lebende und deaktiviert ausgeschiedene Würmer.
+- Turn-Transition blendet den nächsten Spieler kurz sichtbar ein.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/ui.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- HUD-Felder und Button-IDs abgeglichen.
+- Aktive Waffe wird aus dem Game-State markiert.
+- Wurmauswahl ist außerhalb des spielbaren Zustands deaktiviert.
+
+### Bekannte Probleme
+- UI-Polishing und responsive Detailgestaltung folgen später.
+
+### Nächster Schritt
+- Phase 15: Sieg/Niederlage und Ergebnisbildschirm vollständig umsetzen.
