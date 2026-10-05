@@ -42,6 +42,7 @@ document.querySelectorAll("[data-action]").forEach((button) => {
 document.querySelector("#shoot-button").addEventListener("click", () => game.fire());
 document.querySelector("#end-turn").addEventListener("click", () => game.endTurn());
 document.querySelectorAll("[data-weapon]").forEach(button => button.addEventListener("click", () => game.selectWeapon(button.dataset.weapon)));
+document.querySelector("#replay-button").addEventListener("click", () => { game.start(); });
 document.querySelector("#back-menu").addEventListener("click", () => {
   game.stop();
   ui.showMenu();
