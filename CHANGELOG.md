@@ -735,3 +735,36 @@ Phase 6 – Zielen und Schießen
 
 ### Nächster Schritt
 - Phase 7: Wind-System sichtbar machen und sauber in die Projektilphysik integrieren.
+
+
+---
+
+## Zyklus 24 – 2026-10-05
+
+### Phase
+Phase 7 – Wind
+
+### Erledigt
+- Windstärke und -richtung pro Zug zufällig erzeugt.
+- Windwert im HUD sichtbar gemacht und bei der Projektilbewegung skaliert angewendet.
+- Wind wird beim Zugwechsel neu bestimmt.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/game.js`
+- `js/ui.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Windwert bleibt während eines Schusses stabil.
+- Zugwechsel erzeugt einen neuen Windwert.
+- Projektilbeschleunigung berücksichtigt Vorzeichen und Stärke des Windes.
+
+### Bekannte Probleme
+- HUD zeigt den Wind derzeit numerisch statt als grafischen Pfeil.
+
+### Nächster Schritt
+- Phase 8: Explosionen, Schadensabstufung, Rückstoß und Tod vollständig ausbauen.
