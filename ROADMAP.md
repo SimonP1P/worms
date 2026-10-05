@@ -29,7 +29,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 
 - [x] Repository-Struktur prüfen
 - [x] `README.md` prüfen
-- [ ] `ROADMAP.md` anlegen
+- [x] `ROADMAP.md` anlegen
 - [ ] `.gitignore` anlegen
 - [ ] sinnvolle Commit-Struktur festlegen
 
