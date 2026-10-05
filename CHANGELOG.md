@@ -183,3 +183,33 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `index.html` als Einstiegspunkt erstellen.
+
+
+---
+
+## Zyklus 6 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `index.html` als semantischer Browser-Einstiegspunkt erstellt.
+- Canvas, Hauptmenü, Spielbereich und HUD-Grundcontainer integriert.
+- Responsive Viewport-Metadaten und modulare JavaScript-Einbindung vorbereitet.
+
+### Neue Dateien
+- `index.html`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- HTML-Struktur manuell auf eindeutige IDs, Buttons, Canvas und Modulpfad geprüft.
+- Canvas und HUD sind im DOM vorgesehen.
+
+### Bekannte Probleme
+- Styling und JavaScript-Implementierung folgen in den nächsten Zyklen.
+
+### Nächster Schritt
+- `css/style.css` erstellen.
