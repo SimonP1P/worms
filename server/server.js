@@ -13,6 +13,7 @@ const lobbies=new Map();
 function code(){return crypto.randomBytes(3).toString("hex").toUpperCase();}
 function send(ws,message){if(ws.readyState===1)ws.send(JSON.stringify(message));}
 function broadcast(lobby,message){for(const p of lobby.players)send(p.ws,message);}
+function lobbyPlayers(lobby){return lobby.players.filter(p=>p.ws).map(p=>({id:p.id,team:p.team,connected:Boolean(p.ws)}));}
 function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1,worms:[]},turn:0,state:"lobby",match:null};}
 
 const server=http.createServer((req,res)=>{
@@ -31,11 +32,14 @@ wss.on("connection",ws=>{
       const lobby=makeLobby();player={id:crypto.randomUUID(),team:0,ws,lobby};lobby.players.push(player);lobbies.set(lobby.id,lobby);
       return send(ws,{type:"lobby:created",code:lobby.id,playerId:player.id,team:0});
     }
+    if(msg.type==="lobby:reconnect"){
+      const lobby=lobbies.get(String(msg.code||"").toUpperCase()); const existing=lobby?.players.find(p=>p.id===msg.playerId); if(!existing||existing.disconnectedAt&&Date.now()-existing.disconnectedAt>60000)return send(ws,{type:"error",message:"Reconnect nicht möglich"}); existing.ws=ws;existing.disconnectedAt=null;player=existing;send(ws,{type:"lobby:reconnected",code:lobby.id,team:player.team});broadcast(lobby,{type:"lobby:state",players:lobbyPlayers(lobby)});if(lobby.match)send(ws,{type:"state",state:snapshot(lobby.match)});return;
+    }
     if(msg.type==="lobby:join"){
       const lobby=lobbies.get(String(msg.code||"").toUpperCase()); if(!lobby||lobby.players.length>=2)return send(ws,{type:"error",message:"Lobby nicht verfügbar"});
       player={id:crypto.randomUUID(),team:1,ws,lobby};lobby.players.push(player);
       send(ws,{type:"lobby:joined",code:lobby.id,playerId:player.id,team:1});
-      broadcast(lobby,{type:"lobby:state",players:lobby.players.map(p=>({id:p.id,team:p.team})),config:lobby.config});
+      broadcast(lobby,{type:"lobby:state",players:lobbyPlayers(lobby),config:lobby.config});
       return;
     }
     if(!player)return send(ws,{type:"error",message:"Zuerst einer Lobby beitreten"});
@@ -58,10 +62,7 @@ wss.on("connection",ws=>{
       return broadcast(lobby,{type:"state",state:snapshot(lobby.match),from:player.team});
     }
   });
-  ws.on("close",()=>{
-    if(!player)return;
-    const lobby=player.lobby;lobby.players=lobby.players.filter(p=>p!==player);
-    if(!lobby.players.length)lobbies.delete(lobby.id);else broadcast(lobby,{type:"lobby:state",players:lobby.players.map(p=>({id:p.id,team:p.team}))});
-  });
+  ws.on("close",()=>{if(!player)return;player.ws=null;player.disconnectedAt=Date.now();broadcast(player.lobby,{type:"lobby:state",players:lobbyPlayers(player.lobby)});});
 });
+setInterval(()=>{for(const [id,lobby] of lobbies){if(lobby.players.every(p=>!p.ws)&&lobby.players.some(p=>p.disconnectedAt&&Date.now()-p.disconnectedAt>60000))lobbies.delete(id);}},15000);
 server.listen(process.env.PORT||3000,()=>console.log("Worms Arena server on http://localhost:"+(process.env.PORT||3000)));
