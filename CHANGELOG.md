@@ -836,3 +836,38 @@ Phase 9 – Zerstörbares Terrain
 
 ### Nächster Schritt
 - Phase 10: Waffenarchitektur, Bazooka, Granate, Dynamit und freie Waffenwahl pro Zug ausbauen.
+
+
+---
+
+## Zyklus 27 – 2026-10-05
+
+### Phase
+Phase 10 – Waffen-System
+
+### Erledigt
+- Gemeinsame Waffenstruktur mit Name, Schaden, Explosionsradius, Projektil-/Gravitationswerten und Spezialparametern erstellt.
+- Bazooka, Granate und Dynamit als spielbare Waffen eingebunden.
+- Dynamit erhält Platzierung auf dem Terrain und Countdown-Zündung.
+- Waffenauswahl im HUD erlaubt unabhängigen Wechsel der Waffe vor dem Schuss.
+- Wurm- und Waffenwahl sind unabhängig voneinander.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Waffen-IDs gegen UI und Game-Controller abgeglichen.
+- Dynamit-Fuse gegen den Projektileinschlagspfad abgesichert.
+
+### Bekannte Probleme
+- Waffenvorräte/Ammo sind noch unbegrenzt; das ist in den aktuellen Anforderungen nicht zwingend vorgegeben.
+
+### Nächster Schritt
+- Phase 11: Vier eigenständige Welten und Map-Auswahl umsetzen.
