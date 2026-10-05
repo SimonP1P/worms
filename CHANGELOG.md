@@ -871,3 +871,38 @@ Phase 10 – Waffen-System
 
 ### Nächster Schritt
 - Phase 11: Vier eigenständige Welten und Map-Auswahl umsetzen.
+
+
+---
+
+## Zyklus 28 – 2026-10-05
+
+### Phase
+Phase 11 – Vier Welten
+
+### Erledigt
+- Vier eigenständige Welten mit unterschiedlichen Terrainprofilen und Farbstimmungen angelegt.
+- Map-ID und Map-Auswahl im Matchstart gespeichert und geladen.
+- Welt-Auswahl im Hauptmenü mit Vorschau-Text und Bestätigung über Matchstart ergänzt.
+- Jede Welt besitzt eigene Spawnpunkte.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/maps.js`
+- `js/game.js`
+- `js/main.js`
+- `index.html`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Alle vier Map-IDs werden von `configureMap` akzeptiert.
+- Jede Map besitzt zwei Spawnpunkte und ein eigenes Terrainprofil.
+
+### Bekannte Probleme
+- Die Vorschau ist aktuell textbasiert; eine Miniaturansicht folgt im UI-Polishing.
+
+### Nächster Schritt
+- Phase 12: Wurmfarben und Kopfbedeckungen als echte Match-Konfiguration auswählbar machen.
