@@ -557,23 +557,23 @@ Der Spieler kann seine Würmer vollständig nach den festgelegten Optionen konfi
 
 Nach jedem Tod:
 
-- [ ] prüfen, ob Team noch lebende Würmer besitzt
-- [ ] prüfen, ob nur noch ein Team lebt
+- [x] prüfen, ob Team noch lebende Würmer besitzt
+- [x] prüfen, ob nur noch ein Team lebt
 
 ## 15.2 Game Over
 
-- [ ] Sieger bestimmen
-- [ ] Verlierer bestimmen
-- [ ] Match stoppen
-- [ ] Projektil-/Physiksystem stoppen
+- [x] Sieger bestimmen
+- [x] Verlierer bestimmen
+- [x] Match stoppen
+- [x] Projektil-/Physiksystem stoppen
 
 ## 15.3 Ergebnisbildschirm
 
-- [ ] Sieger anzeigen
-- [ ] Matchdauer anzeigen
-- [ ] optional Statistiken anzeigen
-- [ ] „Nochmal spielen“
-- [ ] „Zurück zum Menü"
+- [x] Sieger anzeigen
+- [x] Matchdauer anzeigen
+- [x] optional Statistiken anzeigen
+- [x] „Nochmal spielen“
+- [x] „Zurück zum Menü"
 
 ---
 
