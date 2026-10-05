@@ -38,7 +38,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [x] `index.html` erstellen
 - [x] `css/style.css` erstellen
 - [x] `js/main.js` erstellen
-- [ ] `js/game.js` erstellen
+- [x] `js/game.js` erstellen
 - [ ] `js/ui.js` erstellen
 - [ ] `js/worm.js` erstellen
 - [ ] `js/terrain.js` erstellen
