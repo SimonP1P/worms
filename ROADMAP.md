@@ -28,7 +28,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 ## 1.1 Repository vorbereiten
 
 - [x] Repository-Struktur prüfen
-- [ ] `README.md` prüfen
+- [x] `README.md` prüfen
 - [ ] `ROADMAP.md` anlegen
 - [ ] `.gitignore` anlegen
 - [ ] sinnvolle Commit-Struktur festlegen
