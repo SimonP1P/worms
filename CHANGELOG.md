@@ -1086,3 +1086,43 @@ Phase 16 – PC-Gegner / KI
 
 ### Nächster Schritt
 - Phase 17: Online-Multiplayer mit autoritativem Server beginnen.
+
+
+---
+
+## Zyklus 34 – 2026-10-05
+
+### Phase
+Phase 17 – Online-Multiplayer
+
+### Erledigt
+- Node-WebSocket-Server mit Lobbyverwaltung erstellt.
+- Client/Server-Kommunikation über WebSocket und JSON-Nachrichten definiert.
+- Lobby erstellen/beitreten, sechsstelliger Code, Teamzuweisung und Spielerstatus umgesetzt.
+- Map, Teamgröße und Wurm-Konfiguration können über den Host synchronisiert werden.
+- Online-Modus besitzt einen eigenen Lobby-Bildschirm.
+
+### Neue Dateien
+- `package.json`
+- `server/server.js`
+- `js/online.js`
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Lobby-Code-Erzeugung und maximal zwei Spieler im Servercode geprüft.
+- WebSocket-Nachrichten für Lobby, Konfiguration, Matchstart und Turnwechsel definiert.
+- Client behält seine zugewiesene Team-ID über den Matchstart.
+
+### Bekannte Probleme
+- Der Online-Server ist noch nicht vollständig autoritativ für Physik, Schaden, Terrain und Sieg.
+- Reconnect/Disconnect und vollständige State-Synchronisation fehlen noch.
+- Abhängigkeit `ws` muss per `npm install` installiert werden.
+
+### Nächster Schritt
+- Online-Gameplay-Synchronisation und serverseitige Validierung vervollständigen, bevor die Online-Phase als abgeschlossen gilt.
