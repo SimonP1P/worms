@@ -178,36 +178,36 @@ Mehrere Würmer können auf der Map stehen, sich bewegen und korrekt mit dem Ter
 
 ## 5.1 Teams
 
-- [ ] Team-System erstellen
-- [ ] Team 1 erstellen
-- [ ] Team 2 erstellen
-- [ ] Würmer Teams zuordnen
+- [x] Team-System erstellen
+- [x] Team 1 erstellen
+- [x] Team 2 erstellen
+- [x] Würmer Teams zuordnen
 
 ## 5.2 Teamgröße
 
-- [ ] 1 Wurm auswählen
-- [ ] 2 Würmer auswählen
-- [ ] 3 Würmer auswählen
-- [ ] korrekte Anzahl erzeugen
+- [x] 1 Wurm auswählen
+- [x] 2 Würmer auswählen
+- [x] 3 Würmer auswählen
+- [x] korrekte Anzahl erzeugen
 
 ## 5.3 Zugverwaltung
 
-- [ ] aktuellen Spieler speichern
-- [ ] aktuellen Zug speichern
-- [ ] Zugdauer definieren
-- [ ] Zug starten
-- [ ] Zug beenden
-- [ ] zum nächsten Team wechseln
+- [x] aktuellen Spieler speichern
+- [x] aktuellen Zug speichern
+- [x] Zugdauer definieren
+- [x] Zug starten
+- [x] Zug beenden
+- [x] zum nächsten Team wechseln
 
 ## 5.4 Wurmauswahl
 
 Zu Beginn jedes eigenen Zuges:
 
-- [ ] alle lebenden eigenen Würmer anzeigen
-- [ ] Spieler darf einen Wurm auswählen
-- [ ] bereits ausgeschiedene Würmer deaktivieren
-- [ ] Auswahl bestätigen
-- [ ] ausgewählten Wurm aktivieren
+- [x] alle lebenden eigenen Würmer anzeigen
+- [x] Spieler darf einen Wurm auswählen
+- [x] bereits ausgeschiedene Würmer deaktivieren
+- [x] Auswahl bestätigen
+- [x] ausgewählten Wurm aktivieren
 
 ## 5.5 Ergebnis
 
