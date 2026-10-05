@@ -329,3 +329,32 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/worm.js` erstellen.
+
+
+---
+
+## Zyklus 11 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `Worm`-Entity mit Position, Geschwindigkeit, HP, Team, Farbe, Kopfbedeckung und Aktivstatus erstellt.
+- Grundbewegung, Gravitation, Bodenkollision, Explosion und Darstellung implementiert.
+
+### Neue Dateien
+- `js/worm.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Zustandsfelder und Renderpfad statisch geprüft.
+- Bewegung und Explosionsschaden auf offensichtliche Grenzwerte geprüft.
+
+### Bekannte Probleme
+- Terrain-, Projektil- und Waffenmodule fehlen noch.
+
+### Nächster Schritt
+- `js/terrain.js` erstellen.
