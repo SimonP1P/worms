@@ -441,3 +441,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/maps.js` erstellen.
+
+
+---
+
+## Zyklus 15 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Map-Datenmodul mit reproduzierbarem Terrain-Höhenprofil und zwei Spawnpunkten erstellt.
+- Map-Erzeugung als Kopie vorbereitet, damit Laufzeitänderungen die Quelldaten nicht mutieren.
+
+### Neue Dateien
+- `js/maps.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Map-Abmessungen, Spawnpunkte und Oberflächenlänge geprüft.
+
+### Bekannte Probleme
+- Aktuell ist nur eine Testwelt enthalten; vier Welten folgen in Phase 11.
+
+### Nächster Schritt
+- `js/ai.js` erstellen.
