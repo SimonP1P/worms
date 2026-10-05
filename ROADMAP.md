@@ -35,7 +35,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 
 ## 1.2 Grundstruktur erstellen
 
-- [ ] `index.html` erstellen
+- [x] `index.html` erstellen
 - [ ] `css/style.css` erstellen
 - [ ] `js/main.js` erstellen
 - [ ] `js/game.js` erstellen
@@ -51,7 +51,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 
 ## 1.3 Basis-HTML
 
-- [ ] Canvas einbauen
+- [x] Canvas einbauen
 - [ ] Spielfläche definieren
 - [ ] Hauptmenü vorbereiten
 - [ ] Spielbereich vorbereiten
