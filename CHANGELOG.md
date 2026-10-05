@@ -358,3 +358,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/terrain.js` erstellen.
+
+
+---
+
+## Zyklus 12 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Terrain-Datenmodell mit Höhenprofil, Kollision, Rendering und zerstörbaren Kratern erstellt.
+
+### Neue Dateien
+- `js/terrain.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Höhenabfragen und Map-Grenzen geprüft.
+- Kraterbildung ist auf den vorhandenen Terrainbereich begrenzt.
+
+### Bekannte Probleme
+- Karten- und Projektilmodule fehlen noch.
+
+### Nächster Schritt
+- `js/projectile.js` erstellen.
