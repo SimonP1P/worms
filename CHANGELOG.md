@@ -1164,3 +1164,39 @@ Phase 17 – Online-Multiplayer
 
 ### Nächster Schritt
 - Reconnect/Disconnect und Online-Match-Wiederaufnahme abschließen, danach Online-Phase final validieren.
+
+
+---
+
+## Zyklus 36 – 2026-10-05
+
+### Phase
+Phase 17 – Online-Multiplayer
+
+### Erledigt
+- Disconnects werden als temporär getrennte Lobby-Mitglieder behandelt.
+- Reconnect über gespeicherte Lobby-ID und Spieler-ID ergänzt.
+- Server hält laufende Matches während eines kurzen Verbindungsverlusts vor.
+- Client versucht die Verbindung automatisch wiederherzustellen.
+- Online-Matchstatus und Teamzuordnung bleiben nach Reconnect erhalten.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `server/server.js`
+- `js/online.js`
+- `js/main.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Reconnect-Zeitfenster und Session-Speicherung statisch geprüft.
+- Server entfernt Spieler nicht unmittelbar beim Disconnect.
+- Matchzustand wird bei erfolgreichem Reconnect erneut an den Client gesendet.
+
+### Bekannte Probleme
+- Ein echter Zwei-Browser-Netzwerktest kann ohne installierte Serverabhängigkeit und laufende Instanz hier nicht ausgeführt werden.
+
+### Nächster Schritt
+- Phase 18: Audio und Animationen hinzufügen.
