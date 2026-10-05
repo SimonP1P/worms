@@ -46,8 +46,8 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [x] `js/weapons.js` erstellen
 - [x] `js/maps.js` erstellen
 - [x] `js/ai.js` erstellen
-- [ ] `assets/images/` erstellen
-- [ ] `assets/sounds/` erstellen
+- [x] `assets/images/` erstellen
+- [x] `assets/sounds/` erstellen
 
 ## 1.3 Basis-HTML
 
