@@ -30,7 +30,7 @@ function explode(state,x,y,weapon){
     else w.y=Math.min(w.y,heightAt(state,w.x)-12);
   }
   const aliveTeams=[0,1].filter(team=>state.worms.some(w=>w.alive&&w.team===team));
-  if(aliveTeams.length===1){state.winner=aliveTeams[0];state.state="game-over";}
+  if(aliveTeams.length<=1){state.winner=aliveTeams.length===1?aliveTeams[0]:null;state.state="game-over";}
 }
 export function applyAction(state,team,action,payload={}){
   if(state.state!=="playing"||team!==state.turn)return {ok:false,error:"Nicht dein Zug"};
