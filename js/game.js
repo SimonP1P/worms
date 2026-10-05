@@ -74,7 +74,7 @@ export class Game {
     if(!snapshot)return;
     if(this.terrain && Array.isArray(snapshot.terrain)) this.terrain.surface=snapshot.terrain.slice();
     for(const remote of snapshot.worms||[]){const local=this.worms.find(w=>w.name===remote.name||w.team===remote.team&&w.name===remote.name);if(local){local.x=remote.x;local.y=remote.y;local.hp=remote.hp;local.alive=remote.alive;local.color=remote.color;local.hat=remote.hat;}}
-    this.team=snapshot.turn; this.wind=snapshot.wind; this.state=snapshot.state==="game-over"?STATES.GAME_OVER:STATES.PLAYING;
+    this.team=snapshot.turn; this.wind=snapshot.wind; if(snapshot.weapon && Weapons[snapshot.weapon])this.weapon=Weapons[snapshot.weapon]; this.state=snapshot.state==="game-over"?STATES.GAME_OVER:STATES.PLAYING;
     const active=this.worms.find(w=>w.alive&&w.team===snapshot.turn&&w.name===snapshot.worms.find(x=>x.id===snapshot.activeWormId)?.name); this.setActiveWorm(active||this.worms.find(w=>w.alive&&w.team===snapshot.turn)||null);
     if(snapshot.state==="game-over")this.winnerTeam=snapshot.winner;
   }
