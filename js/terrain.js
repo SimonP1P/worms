@@ -5,6 +5,7 @@ export class Terrain {
   heightAt(x){const i=Math.max(0,Math.min(this.width-1,Math.floor(x)));return this.surface[i]??this.height;}
   isGrounded(x,y,r=12){return y>=this.heightAt(x)-r-2;}
   collides(x,y){return y>=this.heightAt(x);}
+  settleEntity(entity){const ground=this.heightAt(entity.x)-entity.radius;if(entity.y>ground){entity.y=ground;entity.vy=0;} return ground;}
   destroyCircle(cx,cy,r){
     const min=Math.max(0,Math.floor(cx-r)),max=Math.min(this.width-1,Math.ceil(cx+r));
     for(let x=min;x<=max;x++){const dx=x-cx;if(Math.abs(dx)<=r){const cut=Math.sqrt(r*r-dx*dx);this.surface[x]=Math.max(this.surface[x],cy+cut);}}
