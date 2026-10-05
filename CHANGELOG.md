@@ -413,3 +413,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/weapons.js` erstellen.
+
+
+---
+
+## Zyklus 14 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Gemeinsame Waffenstruktur und erste drei Waffen definiert: Bazooka, Granate und Dynamit.
+- Schaden, Explosionsradius, Gravitation und Projektilfarbe als Daten konfiguriert.
+
+### Neue Dateien
+- `js/weapons.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Alle Waffen besitzen die vom Projektil-/Explosionssystem erwarteten Felder.
+
+### Bekannte Probleme
+- Dynamit-Countdown wird erst in der Waffenphase vollständig genutzt.
+
+### Nächster Schritt
+- `js/maps.js` erstellen.
