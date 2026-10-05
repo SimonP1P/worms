@@ -49,11 +49,11 @@ export function applyAction(state,team,action,payload={}){
       for(let t=0;t<10;t+=.016){vx+=state.wind*8*.016;vy+=420*weapon.gravity*.016;x+=vx*.016;y+=vy*.016;if(x<0||x>state.map.width||y>state.map.height||y>=heightAt(state,x)){impactX=Math.max(0,Math.min(state.map.width,x));impactY=Math.max(0,Math.min(state.map.height,y));break;}}
       impactX??=Math.max(0,Math.min(state.map.width,x));impactY??=Math.min(state.map.height,y);
     }
-    explode(state,impactX,impactY,weapon);
+    const start={x:w.x,y:w.y-14}; explode(state,impactX,impactY,weapon); state.lastEvent={type:"shot",projectile:{start,impact:{x:impactX,y:impactY}},explosion:{x:impactX,y:impactY,radius:weapon.explosionRadius,weapon:weapon.id}};
     if(state.state==="playing"){state.turn=state.turn===0?1:0;state.wind=(Math.random()*2-1)*12;const next=state.worms.find(w=>w.alive&&w.team===state.turn);state.activeWormId=next?.id||null;}
     return {ok:true};
   }
   if(action==="turn:end"){state.turn=state.turn===0?1:0;const next=state.worms.find(w=>w.alive&&w.team===state.turn);state.activeWormId=next?.id||null;return {ok:true};}
   return {ok:false,error:"Unbekannte Aktion"};
 }
-export function snapshot(state){return {mapId:state.mapId,teamSize:state.teamSize,terrain:state.terrain,worms:state.worms,turn:state.turn,activeWormId:state.activeWormId,weapon:state.weapon,wind:state.wind,state:state.state,winner:state.winner};}
+export function snapshot(state){return {mapId:state.mapId,teamSize:state.teamSize,terrain:state.terrain,worms:state.worms,turn:state.turn,activeWormId:state.activeWormId,weapon:state.weapon,wind:state.wind,state:state.state,winner:state.winner,lastEvent:state.lastEvent};}
