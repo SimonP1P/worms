@@ -1013,3 +1013,39 @@ Phase 14 – HUD und Benutzeroberfläche
 
 ### Nächster Schritt
 - Phase 15: Sieg/Niederlage und Ergebnisbildschirm vollständig umsetzen.
+
+
+---
+
+## Zyklus 32 – 2026-10-05
+
+### Phase
+Phase 15 – Sieg, Niederlage und Match-Ende
+
+### Erledigt
+- Nach jedem Tod wird geprüft, ob ein Team keine lebenden Würmer mehr besitzt.
+- Gewinnerteam und Matchdauer werden gespeichert.
+- Game Over beendet weitere Gameplay-Aktionen und zeigt Ergebnisinformationen.
+- „Nochmal spielen“ und „Zurück zum Menü“ integriert.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/game.js`
+- `js/ui.js`
+- `js/main.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Siegerlogik bei leerem Teambestand geprüft.
+- Game-Over-Zustand verhindert weitere Updates der Gameplay-Aktionen.
+- Replay setzt Matchzustand und Ergebnisdaten zurück.
+
+### Bekannte Probleme
+- Statistiken sind auf Sieger und Matchdauer reduziert.
+
+### Nächster Schritt
+- Phase 16: KI-Zugsteuerung und Zielberechnung integrieren.
