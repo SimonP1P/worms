@@ -42,7 +42,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [x] `js/ui.js` erstellen
 - [x] `js/worm.js` erstellen
 - [x] `js/terrain.js` erstellen
-- [ ] `js/projectile.js` erstellen
+- [x] `js/projectile.js` erstellen
 - [ ] `js/weapons.js` erstellen
 - [ ] `js/maps.js` erstellen
 - [ ] `js/ai.js` erstellen
