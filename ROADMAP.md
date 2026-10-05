@@ -370,8 +370,8 @@ Explosionen verändern die Map dauerhaft.
 - [x] Platzierung/Positionierung
 - [x] Countdown
 - [x] Explosion
-- [ ] Schaden
-- [ ] Terrainzerstörung
+- [x] Schaden
+- [x] Terrainzerstörung
 
 ## 10.5 Waffenwahl pro Zug
 
@@ -756,29 +756,29 @@ Zwei oder mehr Spieler können ein vollständiges synchronisiertes Match online 
 Für jede Waffe testen:
 
 - [ ] Schaden
-- [ ] Explosionsradius
-- [ ] Reichweite
-- [ ] Bedienbarkeit
+- [x] Explosionsradius
+- [x] Reichweite
+- [x] Bedienbarkeit
 - [ ] Terrainzerstörung
 
 ## 20.2 Würmer
 
-- [ ] maximale HP festlegen
-- [ ] Rückstoß testen
-- [ ] Bewegung testen
+- [x] maximale HP festlegen
+- [x] Rückstoß testen
+- [x] Bewegung testen
 
 ## 20.3 Maps
 
-- [ ] Spawnpunkte fair
-- [ ] keine unspielbaren Stellen
-- [ ] keine unfairen Vorteile
-- [ ] ausreichend Platz für Artillery-Schüsse
+- [x] Spawnpunkte fair
+- [x] keine unspielbaren Stellen
+- [x] keine unfairen Vorteile
+- [x] ausreichend Platz für Artillery-Schüsse
 
 ## 20.4 Wind
 
-- [ ] minimale Windstärke
-- [ ] maximale Windstärke
-- [ ] Einfluss testen
+- [x] minimale Windstärke
+- [x] maximale Windstärke
+- [x] Einfluss testen
 
 ---
 
