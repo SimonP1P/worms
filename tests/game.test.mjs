@@ -40,3 +40,11 @@ test("snapshot exposes synchronized match state", () => {
   assert.equal(view.turn,0);
   assert.equal(view.activeWormId,"0-0");
 });
+
+
+test("snapshot can represent a game with all worms eliminated", () => {
+  const state=createMatch({teamSize:1});
+  state.worms.forEach(w=>{w.alive=false;w.hp=0;});
+  const view=snapshot(state);
+  assert.equal(view.worms.every(w=>!w.alive),true);
+});
