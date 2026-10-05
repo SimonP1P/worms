@@ -213,3 +213,33 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `css/style.css` erstellen.
+
+
+---
+
+## Zyklus 7 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Responsive Grundgestaltung für Menü, Canvas und HUD erstellt.
+- Mobile und Desktop-Layouts berücksichtigt.
+- Fokuszustände und grundlegende Interaktionsstile ergänzt.
+
+### Neue Dateien
+- `css/style.css`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Stylesheet auf gültige Selektoren und responsive Breakpoints geprüft.
+- Canvas bleibt auf kleinen Viewports innerhalb des Containers.
+
+### Bekannte Probleme
+- Spiel-Logik und visuelles Rendering fehlen noch.
+
+### Nächster Schritt
+- `js/main.js` als Initialisierungspunkt erstellen.
