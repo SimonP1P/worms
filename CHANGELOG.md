@@ -1049,3 +1049,40 @@ Phase 15 – Sieg, Niederlage und Match-Ende
 
 ### Nächster Schritt
 - Phase 16: KI-Zugsteuerung und Zielberechnung integrieren.
+
+
+---
+
+## Zyklus 33 – 2026-10-05
+
+### Phase
+Phase 16 – PC-Gegner / KI
+
+### Erledigt
+- KI übernimmt Team-2-Züge im PC-Modus.
+- KI wählt lebenden Wurm, Ziel und Waffe.
+- Distanzbasierte Waffenwahl für Bazooka/Granate/Dynamit integriert.
+- Zielberechnung berücksichtigt Wind; Schwierigkeitsstufen verändern Zielabweichung und Entscheidungsqualität.
+- Einfache, normale und schwere KI-Konfiguration sind im Menü auswählbar.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/ai.js`
+- `js/game.js`
+- `js/main.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- KI-Turn wird nur für Team 2 im PC-Modus ausgelöst.
+- Schwierigkeit wird auf easy/normal/hard begrenzt.
+- KI nutzt denselben Feuer-/Projektilpfad wie der Spieler.
+
+### Bekannte Probleme
+- KI ist heuristisch und plant keine mehrzügigen Taktiken.
+
+### Nächster Schritt
+- Phase 17: Online-Multiplayer mit autoritativem Server beginnen.
