@@ -10,6 +10,9 @@ export class UI {
     this.weapon=document.querySelector("#hud-weapon");
     this.power=document.querySelector("#hud-power");
     this.status=document.querySelector("#hud-status");
+    this.gameOver=document.querySelector("#game-over-panel");
+    this.resultTitle=document.querySelector("#result-title");
+    this.resultDuration=document.querySelector("#result-duration");
     this.wormSelection=document.querySelector("#worm-selection");
     window.setInterval(()=>this.refresh(),100);
   }
@@ -24,6 +27,7 @@ export class UI {
     this.weapon.textContent=g.weapon?.name||"—";
     this.power.textContent=Math.round(g.shotPower*100)+"%";
     this.status.textContent=g.state+" · "+Math.ceil(g.turnRemaining)+"s";
+    if(g.state==="game-over"){this.gameOver.classList.remove("is-hidden");this.resultTitle.textContent=g.winnerText();this.resultDuration.textContent="Matchdauer: "+g.matchDuration.toFixed(1)+" s";}else{this.gameOver.classList.add("is-hidden");}
     document.querySelectorAll("[data-weapon]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.weapon===g.weapon?.id)));
     this.renderWormSelection();
   }
