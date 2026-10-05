@@ -363,7 +363,7 @@ Explosionen verändern die Map dauerhaft.
 - [x] Gravitation
 - [ ] Explosion
 - [ ] Schaden
-- [ ] Terrainzerstörung
+- [x] Terrainzerstörung
 
 ## 10.4 Dynamit
 
@@ -391,18 +391,18 @@ Der Spieler kann in jedem Zug eine andere verfügbare Waffe wählen.
 
 ## 11.1 Map-System erweitern
 
-- [ ] mehrere Maps laden können
-- [ ] Map-ID speichern
-- [ ] Map-Auswahl speichern
-- [ ] Map-spezifische Spawnpunkte definieren
+- [x] mehrere Maps laden können
+- [x] Map-ID speichern
+- [x] Map-Auswahl speichern
+- [x] Map-spezifische Spawnpunkte definieren
 
 ## 11.2 Welt 1
 
-- [ ] Layout
-- [ ] Hintergrund
+- [x] Layout
+- [x] Hintergrund
 - [ ] Terrain
-- [ ] Spawnpunkte
-- [ ] Test
+- [x] Spawnpunkte
+- [x] Test
 
 ## 11.3 Welt 2
 
@@ -430,10 +430,10 @@ Der Spieler kann in jedem Zug eine andere verfügbare Waffe wählen.
 
 ## 11.6 Map-Auswahl
 
-- [ ] vier Karten im Menü anzeigen
-- [ ] Karte auswählen
-- [ ] Vorschau anzeigen
-- [ ] Auswahl bestätigen
+- [x] vier Karten im Menü anzeigen
+- [x] Karte auswählen
+- [x] Vorschau anzeigen
+- [x] Auswahl bestätigen
 
 ---
 
