@@ -1,13 +1,13 @@
 export class Worm {
   constructor({x,y,team=0,color="#7cf06b",hat="none",name="Wurm"}) {
-    this.x=x;this.y=y;this.vx=0;this.vy=0;this.team=team;this.color=color;this.hat=hat;this.name=name;this.hp=100;this.alive=true;this.active=false;this.radius=12;
+    this.x=x;this.y=y;this.vx=0;this.vy=0;this.team=team;this.color=color;this.hat=hat;this.name=name;this.hp=100;this.alive=true;this.active=false;this.radius=12;this.walkPhase=0;this.hitTimer=0;
   }
   update(dt,terrain,keys){
     if(!this.alive)return;
     const left=keys.has("a")||keys.has("arrowleft"), right=keys.has("d")||keys.has("arrowright");
     this.vx=(right?1:0)-(left?1:0); this.vx*=70;
     if((keys.has("w")||keys.has("arrowup")||keys.has(" "))&&terrain.isGrounded(this.x,this.y,this.radius)) this.vy=-190;
-    this.vy+=480*dt; this.x+=this.vx*dt; this.y+=this.vy*dt;
+    this.walkPhase+=Math.abs(this.vx)*dt*.08; this.hitTimer=Math.max(0,this.hitTimer-dt); this.vy+=480*dt; this.x+=this.vx*dt; this.y+=this.vy*dt;
     this.x=Math.max(this.radius,Math.min(terrain.width-this.radius,this.x));
     const ground=terrain.heightAt(this.x)-this.radius;
     if(this.y>ground){this.y=ground;this.vy=0;}
@@ -17,7 +17,7 @@ export class Worm {
     const d=Math.hypot(this.x-x,this.y-y);
     if(d>=radius)return;
     const factor=1-d/radius;
-    this.hp-=damage*factor;
+    this.hp-=damage*factor; this.hitTimer=.18;
     const push=Math.max(0,1-d/radius)*180;
     if(d>0){this.vx+=(this.x-x)/d*push;this.vy+=(this.y-y)/d*push;}
     if(this.hp<=0){this.hp=0;this.alive=false;}
