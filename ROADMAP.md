@@ -261,16 +261,16 @@ Ein Wurm kann zielen, Schussstärke einstellen und ein Projektil realistisch üb
 
 ## 7.1 Wind-System
 
-- [ ] Windstärke definieren
-- [ ] Windrichtung definieren
-- [ ] Wind zufällig erzeugen
-- [ ] Wind im HUD anzeigen
+- [x] Windstärke definieren
+- [x] Windrichtung definieren
+- [x] Wind zufällig erzeugen
+- [x] Wind im HUD anzeigen
 
 ## 7.2 Physik
 
-- [ ] Wind auf Projektil anwenden
-- [ ] Windstärke skalieren
-- [ ] Wind während eines Schusses berücksichtigen
+- [x] Wind auf Projektil anwenden
+- [x] Windstärke skalieren
+- [x] Wind während eines Schusses berücksichtigen
 
 ## 7.3 Ergebnis
 
