@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Eigenständiges rundenbasiertes 2D-Artillery-Browsergame."><meta name="theme-color" content="#0d111a">
-  <title>Worms Arena • LIVE BUILD 4BF46</title><link rel="stylesheet" href="css/style.css">
+  <title>Worms Arena • LIVE BUILD 4BF46</title><link rel="stylesheet" href="./css/style.css?v=5"><style id="critical-ui">:root{font-family:system-ui,sans-serif;color:#f4f7ff;background:#0d111a}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#26324a,#0d111a 70%)}button{font:inherit;border:1px solid #34405a;border-radius:.65rem;padding:.7rem .9rem;background:#d7ff64;color:#111827;font-weight:800;cursor:pointer}.app-shell{min-height:100vh;padding:clamp(1rem,3vw,3rem);display:grid;place-items:center}.screen{width:min(1200px,100%)}.is-hidden{display:none}.hero{text-align:center;margin-bottom:1.5rem}.hero h1{font-size:clamp(2.5rem,7vw,5rem);margin:.2rem 0}.menu-actions{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:.75rem 0}.map-preview,.customization,.hud{background:#172033;border:1px solid #34405a;border-radius:1rem;padding:1rem}.customization{max-width:760px;margin:1.2rem auto}.worm-config{display:grid;grid-template-columns:1.4fr repeat(6,auto);gap:.35rem;align-items:center}.game-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:1rem}.canvas-wrap{background:#090d14;border:1px solid #34405a;border-radius:1rem;padding:.5rem}.canvas-wrap canvas{display:block;width:100%;height:auto}.hud{display:grid;gap:.6rem}.primary-start{font-size:1.05rem;padding:.85rem 1.25rem}@media(max-width:850px){.game-layout{grid-template-columns:1fr}.worm-config{grid-template-columns:1fr 1fr 1fr 1fr}}</style>
 </head>
 <body>
 <main id="app" class="app-shell">
@@ -36,7 +36,7 @@
   </section>
 </main>
 <script type="module">
-  import("./js/main.js?v=4").catch(error=>{
+  import("./js/main.js?v=5").catch(error=>{
     console.error("Worms Arena konnte nicht gestartet werden:",error);
     const box=document.createElement("div");
     box.style.cssText="position:fixed;inset:auto 1rem 1rem 1rem;z-index:9999;padding:1rem;background:#5b1720;color:#fff;border:2px solid #ff7c8a;border-radius:12px;font:600 14px/1.4 system-ui;box-shadow:0 10px 30px #0008";
