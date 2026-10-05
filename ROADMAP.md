@@ -104,24 +104,24 @@ Eine leere Test-Spielfläche läuft stabil mit funktionierender Game Loop und Ei
 
 ## 3.1 Map-System
 
-- [ ] Map-Datenstruktur definieren
-- [ ] Spawnpunkte definieren
-- [ ] Boden definieren
-- [ ] Plattformen/Hügel definieren
-- [ ] Grenzen der Map definieren
+- [x] Map-Datenstruktur definieren
+- [x] Spawnpunkte definieren
+- [x] Boden definieren
+- [x] Plattformen/Hügel definieren
+- [x] Grenzen der Map definieren
 
 ## 3.2 Terrain rendern
 
-- [ ] Terrain zeichnen
-- [ ] Hintergrund zeichnen
-- [ ] Boden sichtbar machen
-- [ ] Kollision zwischen Wurm und Terrain vorbereiten
+- [x] Terrain zeichnen
+- [x] Hintergrund zeichnen
+- [x] Boden sichtbar machen
+- [x] Kollision zwischen Wurm und Terrain vorbereiten
 
 ## 3.3 Erste Map
 
-- [ ] eine funktionierende Test-Map erstellen
-- [ ] mindestens zwei Team-Spawnpunkte erstellen
-- [ ] Map laden können
+- [x] eine funktionierende Test-Map erstellen
+- [x] mindestens zwei Team-Spawnpunkte erstellen
+- [x] Map laden können
 
 ## 3.4 Ergebnis
 
