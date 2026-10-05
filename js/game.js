@@ -20,6 +20,7 @@ export class Game {
     this.turn = 0;
     this.team = 0;
     this.teamSize = 1;
+    this.mapId = "meadow";
     this.turnDuration = 20;
     this.turnRemaining = this.turnDuration;
     this.activeWorm = null;
@@ -54,10 +55,11 @@ export class Game {
   }
 
   configureTeamSize(size) { this.teamSize = Math.max(1, Math.min(3, Number(size) || 1)); }
+  configureMap(id) { if(MAPS.some(m=>m.id===id)) this.mapId=id; }
 
   start() {
     this.state = STATES.LOADING;
-    const map = createMap(MAPS[0]);
+    const map = createMap(MAPS.find(m=>m.id===this.mapId) || MAPS[0]);
     this.terrain = new Terrain(map);
     this.worms = [];
     const colors=[["#7cf06b","hat"],["#ff7c8a","cap"]];
