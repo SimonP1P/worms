@@ -271,3 +271,33 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/game.js` implementieren.
+
+
+---
+
+## Zyklus 9 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `js/game.js` als zentralen Game-Controller erstellt.
+- Zustände, Game Loop, Input-Grundlage, Projektil-Übergang, Explosion und Siegprüfung vorbereitet.
+- Canvas-Rendering und Pause/Game-Over-Overlays integriert.
+
+### Neue Dateien
+- `js/game.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Zustandsübergänge und DOM-unabhängige Controller-Struktur statisch geprüft.
+- Importabhängigkeiten für die noch folgenden Module dokumentiert.
+
+### Bekannte Probleme
+- Abhängige Gameplay-Module fehlen noch.
+
+### Nächster Schritt
+- `js/ui.js` implementieren.
