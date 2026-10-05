@@ -223,33 +223,33 @@ Zwei Teams können abwechselnd spielen und vor jedem Zug einen beliebigen eigene
 
 ## 6.1 Zielsystem
 
-- [ ] Zielrichtung mit Maus bestimmen
-- [ ] Winkel berechnen
-- [ ] Winkel visualisieren
-- [ ] Zielrichtung am Wurm anzeigen
+- [x] Zielrichtung mit Maus bestimmen
+- [x] Winkel berechnen
+- [x] Winkel visualisieren
+- [x] Zielrichtung am Wurm anzeigen
 
 ## 6.2 Schussstärke
 
-- [ ] Schussstärke speichern
-- [ ] Schussstärke einstellen
-- [ ] Schussstärke anzeigen
-- [ ] Mindest-/Maximalstärke definieren
+- [x] Schussstärke speichern
+- [x] Schussstärke einstellen
+- [x] Schussstärke anzeigen
+- [x] Mindest-/Maximalstärke definieren
 
 ## 6.3 Projektil
 
-- [ ] Projektil-Klasse erstellen
-- [ ] Startposition bestimmen
-- [ ] Startgeschwindigkeit berechnen
-- [ ] Flugrichtung bestimmen
-- [ ] Projektil rendern
+- [x] Projektil-Klasse erstellen
+- [x] Startposition bestimmen
+- [x] Startgeschwindigkeit berechnen
+- [x] Flugrichtung bestimmen
+- [x] Projektil rendern
 
 ## 6.4 Flugphysik
 
-- [ ] Gravitation anwenden
-- [ ] Geschwindigkeit aktualisieren
-- [ ] Position aktualisieren
-- [ ] Flugbahn berechnen
-- [ ] Map-Grenzen behandeln
+- [x] Gravitation anwenden
+- [x] Geschwindigkeit aktualisieren
+- [x] Position aktualisieren
+- [x] Flugbahn berechnen
+- [x] Map-Grenzen behandeln
 
 ## 6.5 Ergebnis
 
