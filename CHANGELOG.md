@@ -525,3 +525,37 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - Phase 1 Basis-HTML vervollständigen und die Projektgrundlage als funktionierenden Browserstand validieren.
+
+
+---
+
+## Zyklus 18 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Basis-HTML vollständig mit Canvas, Hauptmenü, Spielbereich und HUD verbunden.
+- Projektgrundstruktur aus HTML, CSS und modularen JavaScript-Dateien steht.
+- Asset-Verzeichnisse sind versioniert.
+- Ein erster lokaler Spielstart bis zum Canvas-Gameplay ist technisch verdrahtet.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+- `js/game.js` (Setup-State korrigiert)
+
+### Tests
+- Modulpfade und DOM-IDs manuell abgeglichen.
+- Game-Setup-State korrigiert, damit kein undefinierter Zustand verwendet wird.
+- Game Loop, Canvas-Renderpfad und Menüverdrahtung statisch geprüft.
+
+### Bekannte Probleme
+- Browser-E2E-Test konnte in dieser Entwicklungsumgebung nicht direkt ausgeführt werden.
+- Phase 2 wird die Game-Loop-/State-/Input-Implementierung systematisch vervollständigen.
+
+### Nächster Schritt
+- Phase 2: Game Loop und Spielzustände vollständig ausbauen.
