@@ -342,44 +342,44 @@ Explosionen verändern die Map dauerhaft.
 
 ## 10.1 Waffenarchitektur
 
-- [ ] gemeinsame Weapon-Basisklasse/Struktur
-- [ ] Waffenname
-- [ ] Schaden
-- [ ] Explosionsradius
-- [ ] Projektiltyp
-- [ ] Spezialeffekte
+- [x] gemeinsame Weapon-Basisklasse/Struktur
+- [x] Waffenname
+- [x] Schaden
+- [x] Explosionsradius
+- [x] Projektiltyp
+- [x] Spezialeffekte
 
 ## 10.2 Bazooka
 
-- [ ] Projektil
-- [ ] Flugbahn
-- [ ] Explosion
-- [ ] Schaden
-- [ ] Terrainzerstörung
+- [x] Projektil
+- [x] Flugbahn
+- [x] Explosion
+- [x] Schaden
+- [x] Terrainzerstörung
 
 ## 10.3 Granate
 
 - [ ] Projektil
-- [ ] Gravitation
+- [x] Gravitation
 - [ ] Explosion
 - [ ] Schaden
 - [ ] Terrainzerstörung
 
 ## 10.4 Dynamit
 
-- [ ] Platzierung/Positionierung
-- [ ] Countdown
+- [x] Platzierung/Positionierung
+- [x] Countdown
 - [ ] Explosion
 - [ ] Schaden
 - [ ] Terrainzerstörung
 
 ## 10.5 Waffenwahl pro Zug
 
-- [ ] Waffenmenü anzeigen
-- [ ] Waffe auswählen
-- [ ] Auswahl jederzeit vor dem Schuss ändern
-- [ ] nach dem Zug neue Waffe wählen können
-- [ ] aktiven Wurm und Waffe unabhängig auswählen
+- [x] Waffenmenü anzeigen
+- [x] Waffe auswählen
+- [x] Auswahl jederzeit vor dem Schuss ändern
+- [x] nach dem Zug neue Waffe wählen können
+- [x] aktiven Wurm und Waffe unabhängig auswählen
 
 ## 10.6 Ergebnis
 
