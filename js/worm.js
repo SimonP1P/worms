@@ -24,7 +24,7 @@ export class Worm {
   }
   draw(ctx,active=false){
     if(!this.alive){ctx.save();ctx.strokeStyle="#fff";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(this.x-7,this.y-7);ctx.lineTo(this.x+7,this.y+7);ctx.moveTo(this.x+7,this.y-7);ctx.lineTo(this.x-7,this.y+7);ctx.stroke();ctx.restore();return;}
-    ctx.save();ctx.translate(this.x,this.y);
+    ctx.save();ctx.translate(this.x,this.y+Math.sin(this.walkPhase)*2);
     ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(0,0,this.radius,0,Math.PI*2);ctx.fill();
     ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(-4,-3,3,0,Math.PI*2);ctx.arc(4,-3,3,0,Math.PI*2);ctx.fill();
     ctx.fillStyle="#111";ctx.beginPath();ctx.arc(-4,-3,1.4,0,Math.PI*2);ctx.arc(4,-3,1.4,0,Math.PI*2);ctx.fill();
@@ -32,6 +32,7 @@ export class Worm {
     if(this.hat==="hat"){ctx.fillStyle="#a86b32";ctx.fillRect(-10,-15,20,5);ctx.fillRect(-6,-25,12,10);}
     if(this.hat==="cap"){ctx.fillStyle="#3d7cff";ctx.fillRect(-9,-19,14,7);ctx.fillRect(4,-14,9,3);}
     if(this.hat==="beanie"){ctx.fillStyle="#e85d75";ctx.beginPath();ctx.arc(0,-14,9,Math.PI,0);ctx.fill();}
+    if(this.hitTimer>0){ctx.strokeStyle="#ffdf8a";ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,16,0,Math.PI*2);ctx.stroke();}
     if(active){ctx.strokeStyle="#fff";ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,17,0,Math.PI*2);ctx.stroke();}
     ctx.restore();
   }
