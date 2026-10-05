@@ -10,7 +10,7 @@ const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=u
 const lobbies=new Map();
 
 function code(){return crypto.randomBytes(3).toString("hex").toUpperCase();}
-function send(ws,message){if(ws.readyState===ws.OPEN)ws.send(JSON.stringify(message));}
+function send(ws,message){if(ws.readyState===1)ws.send(JSON.stringify(message));}
 function broadcast(lobby,message){for(const p of lobby.players)send(p.ws,message);}
 function makeLobby(){let id;do{id=code();}while(lobbies.has(id));return {id,players:[],config:{mapId:"meadow",teamSize:1},turn:0,state:"lobby"};}
 
@@ -33,6 +33,7 @@ wss.on("connection",ws=>{
     if(msg.type==="lobby:join"){
       const lobby=lobbies.get(String(msg.code||"").toUpperCase()); if(!lobby||lobby.players.length>=2)return send(ws,{type:"error",message:"Lobby nicht verfügbar"});
       player={id:crypto.randomUUID(),team:1,ws,lobby};lobby.players.push(player);
+      send(ws,{type:"lobby:joined",code:lobby.id,playerId:player.id,team:1});
       broadcast(lobby,{type:"lobby:state",players:lobby.players.map(p=>({id:p.id,team:p.team})),config:lobby.config});
       return;
     }
