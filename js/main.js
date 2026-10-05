@@ -23,6 +23,7 @@ for(let i=0;i<6;i++){
 const game = new Game(canvas);
 const ui = new UI(game);
 const audio=new AudioManager();
+document.addEventListener("click",e=>{if(e.target.closest("button"))audio.play("click");});
 game.setAudio(audio);
 document.querySelector("#audio-toggle").addEventListener("click",()=>{audio.setEnabled(!audio.enabled);audio.play("click");});
 
