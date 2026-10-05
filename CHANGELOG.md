@@ -1126,3 +1126,41 @@ Phase 17 – Online-Multiplayer
 
 ### Nächster Schritt
 - Online-Gameplay-Synchronisation und serverseitige Validierung vervollständigen, bevor die Online-Phase als abgeschlossen gilt.
+
+
+---
+
+## Zyklus 35 – 2026-10-05
+
+### Phase
+Phase 17 – Online-Multiplayer
+
+### Erledigt
+- Der Server ist jetzt die autoritative Instanz für Zugreihenfolge, Wurmauswahl, Waffenwahl, Schüsse, Explosionen, Schaden, Terrainänderungen und Siegstatus.
+- Serverseitige Projektilsimulation nutzt Map-, Waffen-, Gravitäts- und Winddaten.
+- Synchronisierte Snapshots enthalten Spieler-/Teamzustand, Würmer, Positionen, HP, aktive Würmer, Waffe, Projektil-/Explosionsevent, Terrain, Wind, Zug und Matchstatus.
+- Ungültige Aktionen und Aktionen außerhalb des eigenen Zuges werden serverseitig abgelehnt.
+- Browser-Clients übernehmen die autoritativen Snapshots und sperren Steuerung während des gegnerischen Zuges.
+
+### Neue Dateien
+- `server/match.js`
+
+### Geänderte Dateien
+- `server/server.js`
+- `js/game.js`
+- `js/ui.js`
+- `package.json`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Serverlogik auf erlaubte Aktionstypen, Teamzugriff und lebende Würmer geprüft.
+- Snapshot enthält alle für die Clientdarstellung benötigten Spielzustände.
+- `ws` auf einen gepatchten Release-Zweig aktualisiert.
+
+### Bekannte Probleme
+- Reconnect/Resume und robuste Disconnect-Behandlung fehlen noch.
+- Ein echter Mehrinstanz-/Netzwerktest mit installiertem `ws` konnte in dieser Umgebung nicht ausgeführt werden.
+
+### Nächster Schritt
+- Reconnect/Disconnect und Online-Match-Wiederaufnahme abschließen, danach Online-Phase final validieren.
