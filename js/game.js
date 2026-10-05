@@ -28,6 +28,7 @@ export class Game {
     this.terrain = null;
     this.worms = [];
     this.weapon = Weapons.bazooka;
+    this.dynamiteTimer = 0;
     this.shotPower = 0.5;
     this.aimAngle = 0;
     this.keys = new Set();
@@ -101,13 +102,24 @@ export class Game {
     if(worm && this.state===STATES.PLAYING) this.setActiveWorm(worm);
   }
 
+  selectWeapon(id) {
+    const weapon=Weapons[id];
+    if(weapon && this.state===STATES.PLAYING) this.weapon=weapon;
+  }
+
   fire() {
     if (!this.activeWorm || this.state !== STATES.PLAYING) return;
     const dx = this.pointer.x - this.activeWorm.x;
     const dy = this.pointer.y - this.activeWorm.y;
     const length = Math.max(1, Math.hypot(dx,dy));
-    const speed = 260 + this.shotPower * 560;
-    this.projectile = new Projectile(this.activeWorm.x, this.activeWorm.y-14, dx/length*speed, dy/length*speed, this.weapon);
+    if(this.weapon.id==="dynamite"){
+      const x=Math.max(8,Math.min(this.canvas.width-8,this.pointer.x));
+      const y=this.terrain.heightAt(x)-8;
+      this.projectile=new Projectile(x,y,0,0,this.weapon); this.dynamiteTimer=this.weapon.countdown;
+    } else {
+      const speed = 260 + this.shotPower * 560;
+      this.projectile = new Projectile(this.activeWorm.x, this.activeWorm.y-14, dx/length*speed, dy/length*speed, this.weapon);
+    }
     this.state = STATES.PROJECTILE;
   }
 
@@ -118,7 +130,8 @@ export class Game {
       this.activeWorm.update(dt, this.terrain, this.keys);
     }
     if (this.state === STATES.PROJECTILE && this.projectile) {
-      this.projectile.update(dt, this.wind);
+      if(this.weapon.id==="dynamite"){ this.dynamiteTimer-=dt; if(this.dynamiteTimer<=0)this.resolveImpact(this.projectile.x,this.projectile.y); }
+      else this.projectile.update(dt, this.wind);
       if (this.projectile.outside(this.canvas) || this.terrain.collides(this.projectile.x,this.projectile.y)) {
         this.resolveImpact(this.projectile.x,this.projectile.y);
       }
