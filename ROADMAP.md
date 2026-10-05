@@ -441,18 +441,18 @@ Der Spieler kann in jedem Zug eine andere verfügbare Waffe wählen.
 
 ## 12.1 Farbauswahl
 
-- [ ] Farboptionen definieren
-- [ ] Vorschau anzeigen
-- [ ] Links-Pfeil
-- [ ] Rechts-Pfeil
-- [ ] Auswahl speichern
+- [x] Farboptionen definieren
+- [x] Vorschau anzeigen
+- [x] Links-Pfeil
+- [x] Rechts-Pfeil
+- [x] Auswahl speichern
 
 ## 12.2 Kopfbedeckungen
 
-- [ ] Keine
-- [ ] Hut
-- [ ] Cap
-- [ ] Mütze
+- [x] Keine
+- [x] Hut
+- [x] Cap
+- [x] Mütze
 - [ ] Vorschau
 - [ ] Links-Pfeil
 - [ ] Rechts-Pfeil
@@ -460,9 +460,9 @@ Der Spieler kann in jedem Zug eine andere verfügbare Waffe wählen.
 
 ## 12.3 Team-/Wurm-Konfiguration
 
-- [ ] jedem Wurm Konfiguration zuweisen
-- [ ] Konfiguration vor Matchstart speichern
-- [ ] Konfiguration im Match verwenden
+- [x] jedem Wurm Konfiguration zuweisen
+- [x] Konfiguration vor Matchstart speichern
+- [x] Konfiguration im Match verwenden
 
 ## 12.4 Ergebnis
 
