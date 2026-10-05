@@ -941,3 +941,38 @@ Phase 12 – Charakter-Anpassung
 
 ### Nächster Schritt
 - Phase 13: Hauptmenü und Match-Setup als vollständigen Konfigurationsfluss ausbauen.
+
+
+---
+
+## Zyklus 30 – 2026-10-05
+
+### Phase
+Phase 13 – Hauptmenü und Match-Setup
+
+### Erledigt
+- Hauptmenü um PC, Online, Einstellungen und Credits/Info erweitert.
+- PC-Modus startet mit ausgewählter Welt, Teamgröße und Wurmkonfiguration.
+- Online-Menüpunkt ist sichtbar, bleibt aber bis Phase 17 bewusst deaktiviert.
+- Welt-, Teamgrößen- und Wurmkonfigurationen werden vor Matchstart übernommen.
+- Matchstart lädt Map, Teams und konfigurierte Würmer.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Menüaktionen gegen vorhandene DOM-Elemente geprüft.
+- Matchstart übernimmt Map, Teamgröße und Wurmkonfiguration.
+
+### Bekannte Probleme
+- Einstellungen/Credits sind zunächst einfache Info-Dialoge.
+- Online bleibt absichtlich bis Phase 17 deaktiviert.
+
+### Nächster Schritt
+- Phase 14: HUD, Waffen-/Wurmauswahl und Zugübergänge weiter ausbauen.
