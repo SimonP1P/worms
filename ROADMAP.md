@@ -676,10 +676,10 @@ Server muss mindestens synchronisieren:
 
 ## 17.6 Verbindungsprobleme
 
-- [ ] Disconnect erkennen
-- [ ] Spielerstatus anzeigen
-- [ ] Reconnect ermöglichen
-- [ ] Match nicht sofort bei kurzem Verbindungsverlust zerstören
+- [x] Disconnect erkennen
+- [x] Spielerstatus anzeigen
+- [x] Reconnect ermöglichen
+- [x] Match nicht sofort bei kurzem Verbindungsverlust zerstören
 
 ## 17.7 Ergebnis
 
