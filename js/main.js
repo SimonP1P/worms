@@ -22,6 +22,8 @@ const game = new Game(canvas);
 const ui = new UI(game);
 let selectedTeamSize = 1;
 let selectedMode = "pc";
+let selectedDifficulty = "normal";
+document.querySelectorAll("[data-difficulty]").forEach(button=>button.addEventListener("click",()=>{selectedDifficulty=button.dataset.difficulty;}));
 let selectedMap = "meadow";
 const mapPreview = document.querySelector("#map-preview");
 document.querySelectorAll("[data-map]").forEach(button => button.addEventListener("click", () => { selectedMap = button.dataset.map; if(mapPreview) mapPreview.textContent = button.textContent; }));
@@ -32,6 +34,8 @@ document.querySelectorAll("[data-action]").forEach((button) => {
     if (button.dataset.action === "start-pc" || button.dataset.action === "start-local") {
       selectedMode = "pc";
       ui.showGame();
+      game.configureMode("pc");
+      game.configureDifficulty(selectedDifficulty);
       game.configureTeamSize(selectedTeamSize);
       game.configureMap(selectedMap);
       game.configureWorms(wormConfigs);
