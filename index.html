@@ -1,43 +1,39 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Eigenständiges rundenbasiertes 2D-Artillery-Browsergame.">
-  <title>Worms Arena</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Worms Arena</title><link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main id="app" class="app-shell">
-    <section id="menu-screen" class="screen">
-      <header class="hero">
-        <p class="eyebrow">ARTILLERY ARENA</p>
-        <h1>Worms Arena</h1>
-        <p>Rundenbasierte Gefechte auf zerstörbaren Welten.</p>
-      </header>
-      <div id="map-preview" class="map-preview" aria-live="polite">Welt 1 – Grüne Hügel</div><div class="menu-actions" aria-label="Weltauswahl"><button data-map="meadow">Welt 1</button><button data-map="canyon">Welt 2</button><button data-map="frost">Welt 3</button><button data-map="volcano">Welt 4</button></div><div class="menu-actions" aria-label="KI-Schwierigkeit"><button data-difficulty="easy">Einfach</button><button data-difficulty="normal">Normal</button><button data-difficulty="hard">Schwer</button></div><div class="menu-actions" aria-label="Teamgröße"><button data-team-size="1">1 Wurm</button><button data-team-size="2">2 Würmer</button><button data-team-size="3">3 Würmer</button></div><div id="menu-actions" class="menu-actions" aria-label="Hauptmenü">
-        <button data-action="start-pc">Gegen PC</button>
-        <button data-action="start-local">Lokales Spiel</button>
-      </div>
-    <section id="online-screen" class="screen is-hidden"><header class="hero"><h2>Online-Lobby</h2><p id="online-status">Nicht verbunden</p></header><div class="menu-actions"><button id="online-create">Lobby erstellen</button><input id="online-code" placeholder="Lobby-Code" maxlength="6" aria-label="Lobby-Code"><button id="online-join">Lobby beitreten</button><button id="online-start">Match starten</button><button id="online-back">Zurück</button></div><p id="online-code-display"></p></section></section>
-
-    <section id="game-screen" class="screen is-hidden" aria-label="Spiel">
-      <div class="game-layout">
-        <div class="canvas-wrap">
-          <canvas id="game-canvas" width="960" height="540" aria-label="Spielwelt"></canvas>
-        </div>
-        <aside id="hud" class="hud" aria-live="polite"><section id="game-over-panel" class="game-over is-hidden"><h2 id="result-title">Match beendet</h2><p id="result-duration">—</p><button id="replay-button" type="button">Nochmal spielen</button></section><section id="game-over-panel" class="game-over is-hidden"><h2 id="result-title">Match beendet</h2><p id="result-duration">—</p><button id="replay-button" type="button">Nochmal spielen</button></section>
-          <div><span>Team</span><strong id="hud-team">—</strong></div>
-          <div><span>Wurm</span><strong id="hud-worm">—</strong></div>
-          <div><span>HP</span><strong id="hud-hp">—</strong></div>
-          <div><span>Wind</span><strong id="hud-wind">—</strong></div>
-          <div><span>Waffe</span><strong id="hud-weapon">Bazooka</strong></div><div><span>Status</span><strong id="hud-status">—</strong></div><div><span>Stärke</span><strong id="hud-power">—</strong></div>
-          <div id="worm-selection" class="worm-selection" aria-label="Wurmauswahl"></div><div id="weapon-selection" class="weapon-selection" aria-label="Waffenauswahl"><button type="button" data-weapon="bazooka">Bazooka</button><button type="button" data-weapon="grenade">Granate</button><button type="button" data-weapon="dynamite">Dynamit</button></div><button id="shoot-button" type="button">Schießen</button><button id="end-turn" type="button">Zug beenden</button>
-          <button id="back-menu" type="button">Menü</button>
-        </aside>
-      </div>
-    </section>
-  </main>
-  <script type="module" src="js/main.js"></script>
-</body>
-</html>
+<main id="app" class="app-shell">
+  <section id="menu-screen" class="screen">
+    <header class="hero"><p class="eyebrow">ARTILLERY ARENA</p><h1>Worms Arena</h1><p>Rundenbasierte Gefechte auf zerstörbaren Welten.</p></header>
+    <div id="map-preview" class="map-preview" aria-live="polite">Welt 1 – Grüne Hügel</div>
+    <div class="menu-actions" aria-label="Weltauswahl"><button data-map="meadow">Welt 1</button><button data-map="canyon">Welt 2</button><button data-map="frost">Welt 3</button><button data-map="volcano">Welt 4</button></div>
+    <div class="menu-actions" aria-label="KI-Schwierigkeit"><button data-difficulty="easy">Einfach</button><button data-difficulty="normal">Normal</button><button data-difficulty="hard">Schwer</button></div>
+    <div class="menu-actions" aria-label="Teamgröße"><button data-team-size="1">1 Wurm</button><button data-team-size="2">2 Würmer</button><button data-team-size="3">3 Würmer</button></div>
+    <section id="customization" class="customization" aria-label="Wurm-Anpassung"><h2>Würmer</h2><div id="worm-configs"></div></section>
+    <div id="menu-actions" class="menu-actions" aria-label="Hauptmenü">
+      <button data-action="start-pc">Gegen PC</button><button data-action="start-online">Online</button><button data-action="settings">Einstellungen</button><button data-action="credits">Credits / Info</button>
+    </div>
+  </section>
+  <section id="online-screen" class="screen is-hidden">
+    <header class="hero"><h2>Online-Lobby</h2><p id="online-status">Nicht verbunden</p></header>
+    <div class="menu-actions"><button id="online-create">Lobby erstellen</button><input id="online-code" placeholder="Lobby-Code" maxlength="6" aria-label="Lobby-Code"><button id="online-join">Lobby beitreten</button><button id="online-start">Match starten</button><button id="online-back">Zurück</button></div>
+    <p id="online-code-display"></p>
+  </section>
+  <section id="game-screen" class="screen is-hidden" aria-label="Spiel">
+    <div class="game-layout"><div class="canvas-wrap"><canvas id="game-canvas" width="960" height="540" aria-label="Spielwelt"></canvas></div>
+      <aside id="hud" class="hud" aria-live="polite">
+        <section id="game-over-panel" class="game-over is-hidden"><h2 id="result-title">Match beendet</h2><p id="result-duration">—</p><button id="replay-button" type="button">Nochmal spielen</button></section>
+        <div><span>Team</span><strong id="hud-team">—</strong></div><div><span>Wurm</span><strong id="hud-worm">—</strong></div><div><span>HP</span><strong id="hud-hp">—</strong></div><div><span>Wind</span><strong id="hud-wind">—</strong></div><div><span>Waffe</span><strong id="hud-weapon">Bazooka</strong></div><div><span>Status</span><strong id="hud-status">—</strong></div><div><span>Stärke</span><strong id="hud-power">—</strong></div>
+        <div id="worm-selection" class="worm-selection" aria-label="Wurmauswahl"></div>
+        <div id="weapon-selection" class="weapon-selection" aria-label="Waffenauswahl"><button type="button" data-weapon="bazooka">Bazooka</button><button type="button" data-weapon="grenade">Granate</button><button type="button" data-weapon="dynamite">Dynamit</button></div>
+        <button id="shoot-button" type="button">Schießen</button><button id="end-turn" type="button">Zug beenden</button><button id="back-menu" type="button">Menü</button>
+      </aside>
+    </div>
+  </section>
+</main>
+<script type="module" src="js/main.js"></script>
+</body></html>
