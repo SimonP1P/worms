@@ -301,3 +301,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - `js/ui.js` implementieren.
+
+
+---
+
+## Zyklus 10 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- `js/ui.js` als HUD- und Bildschirmsteuerung erstellt.
+- Team, aktiver Wurm, HP, Wind und Waffe werden aus dem Spielzustand gespiegelt.
+
+### Neue Dateien
+- `js/ui.js`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- HUD-IDs mit `index.html` abgeglichen.
+
+### Bekannte Probleme
+- Gameplay-Module für Würmer, Terrain und Projektil fehlen noch.
+
+### Nächster Schritt
+- `js/worm.js` erstellen.
