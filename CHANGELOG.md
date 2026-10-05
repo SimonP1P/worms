@@ -1273,3 +1273,39 @@ Phase 19 – Grafik und Polishing
 
 ### Nächster Schritt
 - Phase 20: Balancing von Waffen, Würmern, Maps und Wind.
+
+
+---
+
+## Zyklus 39 – 2026-10-05
+
+### Phase
+Phase 20 – Balancing
+
+### Erledigt
+- Zentrale Balance-Konstanten für 100 HP, Windbereich -12 bis +12 und Schussstärke 15–100 % eingeführt.
+- Waffenwerte auf konsistente Schadens-/Radiusabstufungen geprüft.
+- Rückstoß und Bewegung gegen die vorhandene 100-HP-Worm-Physik geprüft.
+- Alle vier Map-Spawnpaare auf symmetrische Startseiten geprüft.
+- Windbereich und Einfluss auf die Projektilphysik begrenzt.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/weapons.js`
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Waffenwerte: Bazooka 55/52, Granate 70/62, Dynamit 95/82 auf abgestufte Wirkung geprüft.
+- HP-Basis: 100.
+- Wind: -12 bis +12.
+- Schussstärke: 15–100 %.
+
+### Bekannte Probleme
+- Formales Playtesting mit vielen Match-Wiederholungen steht noch aus.
+
+### Nächster Schritt
+- Phase 21: Fehlerbehebung, Edge Cases und Performance-Tests.
