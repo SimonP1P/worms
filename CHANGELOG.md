@@ -628,3 +628,36 @@ Phase 3 – Erste Spielwelt
 
 ### Nächster Schritt
 - Phase 4: Wurm-System vollständig ausbauen und mehrere Würmer mit Bewegung und Terrain-Kollision unterstützen.
+
+
+---
+
+## Zyklus 21 – 2026-10-05
+
+### Phase
+Phase 4 – Würmer
+
+### Erledigt
+- Worm-Entity deckt Position, Geschwindigkeit, HP, Team, Farbe, Kopfbedeckung, Lebensstatus und Aktivstatus ab.
+- Eigenständige Wurm-Darstellung inklusive Augen und Kopfbedeckungen umgesetzt.
+- Gravitation, Boden-Kollision, Bewegung, Richtungswechsel, Sprung und Map-Grenzen implementiert.
+- Aktiver Wurm wird explizit markiert und im Rendering hervorgehoben.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Wurm-Felder gegen Anforderungen geprüft.
+- Aktivstatus wird beim Matchstart und Zugwechsel synchron gesetzt.
+- Bewegungsgrenzen und Bodenauflage im Code geprüft.
+
+### Bekannte Probleme
+- Teamgrößen 1/2/3 werden in Phase 5 ergänzt.
+
+### Nächster Schritt
+- Phase 5: Teams, Teamgrößen, Zugverwaltung und freie Wurmauswahl pro Zug implementieren.
