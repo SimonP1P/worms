@@ -3,7 +3,7 @@ export class OnlineClient {
     this.onMessage=onMessage;
     this.onStatus=onStatus;
     this.socket=null;
-    this.session=JSON.parse(sessionStorage.getItem("worms-online-session")||"null");
+    let saved=null;try{saved=globalThis.sessionStorage?.getItem("worms-online-session");}catch{}this.session=JSON.parse(saved||"null");
     this.reconnectTimer=null;
     this.url=null;
   }
@@ -41,7 +41,7 @@ export class OnlineClient {
   send(type,payload={}){
     if(this.socket?.readyState===WebSocket.OPEN)this.socket.send(JSON.stringify({type,...payload}));
   }
-  rememberSession(code,playerId){this.session={code,playerId};sessionStorage.setItem("worms-online-session",JSON.stringify(this.session));}
+  rememberSession(code,playerId){this.session={code,playerId};try{globalThis.sessionStorage?.setItem("worms-online-session",JSON.stringify(this.session));}catch{}}
   createLobby(){this.send("lobby:create");}
   joinLobby(code){this.send("lobby:join",{code});}
   configure(config){this.send("match:config",config);}
