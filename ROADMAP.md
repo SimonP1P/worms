@@ -520,34 +520,34 @@ Der Spieler kann seine Würmer vollständig nach den festgelegten Optionen konfi
 
 ## 14.1 HUD
 
-- [ ] aktuelles Team anzeigen
-- [ ] aktueller Wurm anzeigen
-- [ ] Lebenspunkte anzeigen
-- [ ] Wind anzeigen
-- [ ] ausgewählte Waffe anzeigen
-- [ ] Schussstärke anzeigen
-- [ ] Zugstatus anzeigen
+- [x] aktuelles Team anzeigen
+- [x] aktueller Wurm anzeigen
+- [x] Lebenspunkte anzeigen
+- [x] Wind anzeigen
+- [x] ausgewählte Waffe anzeigen
+- [x] Schussstärke anzeigen
+- [x] Zugstatus anzeigen
 
 ## 14.2 Waffenauswahl
 
-- [ ] verfügbare Waffen anzeigen
-- [ ] aktive Waffe markieren
-- [ ] Waffe wechseln
-- [ ] Schießen-Button
+- [x] verfügbare Waffen anzeigen
+- [x] aktive Waffe markieren
+- [x] Waffe wechseln
+- [x] Schießen-Button
 
 ## 14.3 Wurmauswahl
 
-- [ ] lebende Würmer anzeigen
-- [ ] ausgeschiedene Würmer markieren
-- [ ] aktiven Wurm hervorheben
-- [ ] Wurm auswählen
+- [x] lebende Würmer anzeigen
+- [x] ausgeschiedene Würmer markieren
+- [x] aktiven Wurm hervorheben
+- [x] Wurm auswählen
 
 ## 14.4 Übergänge
 
-- [ ] „Team 1 ist dran“
-- [ ] „Team 2 ist dran“
-- [ ] Countdown
-- [ ] Zugwechsel-Animation
+- [x] „Team 1 ist dran“
+- [x] „Team 2 ist dran“
+- [x] Countdown
+- [x] Zugwechsel-Animation
 
 ---
 
