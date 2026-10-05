@@ -594,3 +594,37 @@ Phase 2 – Game Engine / Spielschleife
 
 ### Nächster Schritt
 - Phase 3: Map-System, Spawnpunkte und erste vollständig geladene Test-Map ausbauen.
+
+
+---
+
+## Zyklus 20 – 2026-10-05
+
+### Phase
+Phase 3 – Erste Spielwelt
+
+### Erledigt
+- Map-Datenstruktur mit Abmessungen, Terrainprofil, Spawnpunkten und visuellen Parametern erstellt.
+- Erste Test-Map mit zwei Team-Spawnpunkten integriert.
+- Terrain rendert Hintergrund, Boden und Hügelprofil.
+- Terrain-Kollision und Map-Grenzen stehen für Würmer und Projektile bereit.
+- Game-Start verwendet jetzt die Spawnpunkte der geladenen Map statt hart codierter Positionswerte.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `js/game.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Map-Spawns und Terrain-Abmessungen geprüft.
+- Spawnpunkte werden beim Matchstart aus den Map-Daten gelesen.
+
+### Bekannte Probleme
+- Noch nur eine Welt.
+- Terrainzerstörung und vollständige Kollisionsanpassung folgen später.
+
+### Nächster Schritt
+- Phase 4: Wurm-System vollständig ausbauen und mehrere Würmer mit Bewegung und Terrain-Kollision unterstützen.
