@@ -1,6 +1,7 @@
 import { Game } from "./game.js";
 import { UI } from "./ui.js";
 import { OnlineClient } from "./online.js";
+import { AudioManager } from "./audio.js";
 
 const canvas = document.querySelector("#game-canvas");
 const colors=["#7cf06b","#ff7c8a","#64b5ff","#ffd45a","#c98cff","#ff9f52"];
@@ -21,6 +22,9 @@ for(let i=0;i<6;i++){
 
 const game = new Game(canvas);
 const ui = new UI(game);
+const audio=new AudioManager();
+game.setAudio(audio);
+document.querySelector("#audio-toggle").addEventListener("click",()=>{audio.setEnabled(!audio.enabled);audio.play("click");});
 
 const onlineScreen=document.querySelector("#online-screen");
 const onlineStatus=document.querySelector("#online-status");
@@ -54,8 +58,9 @@ document.querySelectorAll("[data-action]").forEach((button) => {
       game.configureTeamSize(selectedTeamSize);
       game.configureMap(selectedMap);
       game.configureWorms(wormConfigs);
+      audio.ensure();audio.startMusic();
       game.start();
-    } else if(button.dataset.action==="start-online"){ document.querySelector("#menu-screen").classList.add("is-hidden"); onlineScreen.classList.remove("is-hidden"); online.connect(); } else if(button.dataset.action==="settings"){ alert("Einstellungen folgen im Audio/UI-Polishing."); } else if(button.dataset.action==="credits"){ alert("Worms Arena – eigenständiges Browsergame."); }
+    } else if(button.dataset.action==="start-online"){ document.querySelector("#menu-screen").classList.add("is-hidden"); onlineScreen.classList.remove("is-hidden"); online.connect(); } else if(button.dataset.action==="settings"){ audio.setEnabled(!audio.enabled); } else if(button.dataset.action==="credits"){ alert("Worms Arena – eigenständiges Browsergame."); }
   });
 });
 document.querySelector("#shoot-button").addEventListener("click", () => game.fire());
