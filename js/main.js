@@ -25,11 +25,12 @@ const onlineScreen=document.querySelector("#online-screen");
 const onlineStatus=document.querySelector("#online-status");
 const onlineCode=document.querySelector("#online-code");
 const onlineCodeDisplay=document.querySelector("#online-code-display");
-const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created")onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(msg.turn===0?0:1);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);}});
+const online=new OnlineClient({onStatus:s=>{if(onlineStatus)onlineStatus.textContent=s;},onMessage:msg=>{if(msg.type==="lobby:created"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="lobby:joined"){onlineTeam=msg.team;onlineCodeDisplay.textContent="Lobby-Code: "+msg.code;}if(msg.type==="match:start"){game.configureMode("online");game.configureOnline(onlineTeam??0);game.configureMap(msg.config.mapId);game.configureTeamSize(msg.config.teamSize);game.configureWorms(wormConfigs);ui.showGame();game.start();}if(msg.type==="turn")game.setRemoteTurn(msg.turn);}});
 
 let selectedTeamSize = 1;
 let selectedMode = "pc";
 let selectedDifficulty = "normal";
+let onlineTeam = null;
 document.querySelectorAll("[data-difficulty]").forEach(button=>button.addEventListener("click",()=>{selectedDifficulty=button.dataset.difficulty;}));
 let selectedMap = "meadow";
 const mapPreview = document.querySelector("#map-preview");
