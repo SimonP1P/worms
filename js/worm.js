@@ -23,7 +23,7 @@ export class Worm {
     if(this.hp<=0){this.hp=0;this.alive=false;}
   }
   draw(ctx,active=false){
-    if(!this.alive)return;
+    if(!this.alive){ctx.save();ctx.strokeStyle="#fff";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(this.x-7,this.y-7);ctx.lineTo(this.x+7,this.y+7);ctx.moveTo(this.x+7,this.y-7);ctx.lineTo(this.x-7,this.y+7);ctx.stroke();ctx.restore();return;}
     ctx.save();ctx.translate(this.x,this.y);
     ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(0,0,this.radius,0,Math.PI*2);ctx.fill();
     ctx.fillStyle="#fff";ctx.beginPath();ctx.arc(-4,-3,3,0,Math.PI*2);ctx.arc(4,-3,3,0,Math.PI*2);ctx.fill();
