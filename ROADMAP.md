@@ -36,7 +36,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 ## 1.2 Grundstruktur erstellen
 
 - [x] `index.html` erstellen
-- [ ] `css/style.css` erstellen
+- [x] `css/style.css` erstellen
 - [ ] `js/main.js` erstellen
 - [ ] `js/game.js` erstellen
 - [ ] `js/ui.js` erstellen
@@ -56,7 +56,7 @@ Die Entwicklung erfolgt **von einem kleinen spielbaren Kern zu einem vollständi
 - [ ] Hauptmenü vorbereiten
 - [ ] Spielbereich vorbereiten
 - [ ] HUD-Bereich vorbereiten
-- [ ] responsive Grundstruktur erstellen
+- [x] responsive Grundstruktur erstellen
 
 ## 1.4 Ergebnis
 
