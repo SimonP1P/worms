@@ -1200,3 +1200,41 @@ Phase 17 – Online-Multiplayer
 
 ### Nächster Schritt
 - Phase 18: Audio und Animationen hinzufügen.
+
+
+---
+
+## Zyklus 37 – 2026-10-05
+
+### Phase
+Phase 18 – Audio und Animationen
+
+### Erledigt
+- Eigenständiger prozeduraler Soundmanager ohne externe Audio-Assets erstellt.
+- Schuss, Treffer, Schaden, Explosion, Tod, UI-Klick, Zugwechsel und Sieg werden akustisch signalisiert.
+- Menü-/Match-Musik als leichte prozedurale Sequenz ergänzt.
+- Audio kann gespeichert an/aus geschaltet und in der Lautstärke verändert werden.
+- Wurmbewegung, Treffer-Flash, Explosion, Rückstoßphysik und Todesmarkierung animiert bzw. visuell hervorgehoben.
+
+### Neue Dateien
+- `js/audio.js`
+
+### Geänderte Dateien
+- `index.html`
+- `js/main.js`
+- `js/game.js`
+- `js/worm.js`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Audio Manager auf Browser-Audio-Lebenszyklus geprüft.
+- Soundtrigger gegen Gameplay-Zustände abgeglichen.
+- Animationszustände laufen delta-time-basiert bzw. mit bestehender Renderanimation.
+
+### Bekannte Probleme
+- Audio wurde nicht in allen Zielbrowsern real abgespielt getestet.
+- Finale Assets und Artstyle folgen in Phase 19.
+
+### Nächster Schritt
+- Phase 19: Grafik und UI-Polishing.
