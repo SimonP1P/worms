@@ -155,3 +155,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - Grundstruktur mit HTML, CSS, JavaScript-Modulen und Asset-Platzhaltern erstellen.
+
+
+---
+
+## Zyklus 5 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Die Commit-Struktur wurde durch die bisherigen fachlich benannten Phase-/Zyklus-Commits etabliert.
+- Jeder Entwicklungszyklus erhält einen beschreibenden Commit, passend zur jeweiligen Roadmap-Aufgabe.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Bisherige Commits auf aussagekräftige, phasenbezogene Nachrichten geprüft.
+
+### Bekannte Probleme
+- Browser-Spielstruktur fehlt noch.
+
+### Nächster Schritt
+- `index.html` als Einstiegspunkt erstellen.
