@@ -1238,3 +1238,38 @@ Phase 18 – Audio und Animationen
 
 ### Nächster Schritt
 - Phase 19: Grafik und UI-Polishing.
+
+
+---
+
+## Zyklus 38 – 2026-10-05
+
+### Phase
+Phase 19 – Grafik und Polishing
+
+### Erledigt
+- Eigenständigen, kontrastreichen UI-Artstyle mit Panel-/Button-System definiert.
+- Würmer und Kopfbedeckungen als eigene Vektor-/Canvas-Formen weiterverwendet und visuell hervorgehoben.
+- Waffen, Projektile und Explosionen besitzen eigene Darstellungsparameter.
+- Vier Welten haben individuelle Farb- und Terrainstimmungen.
+- Hover-, Fokus-, Auswahl-, Übergangs- und Disabled-Zustände ergänzt.
+- Responsive Darstellung für Desktop, Tablet und kleine Fenster verbessert.
+- HUD-Lesbarkeit für HP, Wind, Waffe, Stärke und Zugstatus erhöht.
+
+### Neue Dateien
+- Keine.
+
+### Geänderte Dateien
+- `css/style.css`
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Responsive Breakpoints und Tastaturfokus im CSS geprüft.
+- Aktive Waffen- und deaktivierte Auswahlzustände berücksichtigt.
+
+### Bekannte Probleme
+- Browser-spezifische Renderingtests folgen in Phase 22.
+
+### Nächster Schritt
+- Phase 20: Balancing von Waffen, Würmern, Maps und Wind.
