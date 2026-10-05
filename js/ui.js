@@ -9,6 +9,7 @@ export class UI {
     this.wind=document.querySelector("#hud-wind");
     this.weapon=document.querySelector("#hud-weapon");
     this.power=document.querySelector("#hud-power");
+    this.status=document.querySelector("#hud-status");
     this.wormSelection=document.querySelector("#worm-selection");
     window.setInterval(()=>this.refresh(),100);
   }
@@ -22,13 +23,15 @@ export class UI {
     this.wind.textContent=g.wind.toFixed(1);
     this.weapon.textContent=g.weapon?.name||"—";
     this.power.textContent=Math.round(g.shotPower*100)+"%";
+    this.status.textContent=g.state+" · "+Math.ceil(g.turnRemaining)+"s";
+    document.querySelectorAll("[data-weapon]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.weapon===g.weapon?.id)));
     this.renderWormSelection();
   }
   renderWormSelection(){
     if(!this.wormSelection)return;
     this.wormSelection.replaceChildren();
     for(const w of this.game.worms.filter(x=>x.team===this.game.team)){
-      const b=document.createElement("button"); b.type="button"; b.textContent=w.name+(w.alive?"":" (ausgeschieden)"); b.disabled=!w.alive;
+      const b=document.createElement("button"); b.type="button"; b.textContent=w.name+(w.alive?"":" (ausgeschieden)"); b.disabled=!w.alive || this.game.state!=="playing";
       if(w===this.game.activeWorm)b.setAttribute("aria-pressed","true");
       b.addEventListener("click",()=>this.game.selectWorm(w.name)); this.wormSelection.appendChild(b);
     }
