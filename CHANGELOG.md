@@ -497,3 +497,31 @@ Phase 1 – Projektgrundlage
 
 ### Nächster Schritt
 - Asset-Verzeichnisse mit Platzhalterdateien anlegen.
+
+
+---
+
+## Zyklus 17 – 2026-10-05
+
+### Phase
+Phase 1 – Projektgrundlage
+
+### Erledigt
+- Bild- und Sound-Asset-Verzeichnisse als versionierte Platzhalter angelegt.
+
+### Neue Dateien
+- `assets/images/.gitkeep`
+- `assets/sounds/.gitkeep`
+
+### Geänderte Dateien
+- `ROADMAP.md`
+- `CHANGELOG.md`
+
+### Tests
+- Beide Verzeichnisse sind im Repository abgebildet.
+
+### Bekannte Probleme
+- Eigene finale Grafiken und Sounds folgen in späteren Polishing-/Audio-Phasen.
+
+### Nächster Schritt
+- Phase 1 Basis-HTML vervollständigen und die Projektgrundlage als funktionierenden Browserstand validieren.
