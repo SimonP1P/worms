@@ -47,6 +47,7 @@ export class Game {
       this.pointer.y = (e.clientY-r.top) * this.canvas.height/r.height;
       if(this.activeWorm){ const dx=this.pointer.x-this.activeWorm.x,dy=this.pointer.y-this.activeWorm.y; this.aimAngle=Math.atan2(dy,dx); this.shotPower=Math.max(0.15,Math.min(1,Math.hypot(dx,dy)/420)); }
     });
+    this.canvas.addEventListener("wheel", e => { if(this.state===STATES.PLAYING){ e.preventDefault(); this.shotPower=Math.max(0.15,Math.min(1,this.shotPower+(e.deltaY<0?0.05:-0.05))); } }, {passive:false});
     this.canvas.addEventListener("pointerdown", () => { if (this.state === STATES.PLAYING) this.fire(); });
   }
 
