@@ -21,6 +21,7 @@ export class Game {
     this.team = 0;
     this.teamSize = 1;
     this.mapId = "meadow";
+    this.wormConfigs = Array.from({length:6},()=>({color:"#7cf06b",hat:"none"}));
     this.turnDuration = 20;
     this.turnRemaining = this.turnDuration;
     this.activeWorm = null;
@@ -56,6 +57,7 @@ export class Game {
 
   configureTeamSize(size) { this.teamSize = Math.max(1, Math.min(3, Number(size) || 1)); }
   configureMap(id) { if(MAPS.some(m=>m.id===id)) this.mapId=id; }
+  configureWorms(configs) { this.wormConfigs=configs.map(c=>({color:c.color,hat:c.hat})); }
 
   start() {
     this.state = STATES.LOADING;
@@ -66,7 +68,7 @@ export class Game {
     for(let team=0;team<2;team++){
       for(let i=0;i<this.teamSize;i++){
         const base=map.spawns[team];
-        this.worms.push(new Worm({x:base.x+(team?1:-1)*i*28,y:base.y,team,color:colors[team][0],hat:colors[team][1],name:(team?"Rot ":"Grün ")+(i+1)}));
+        const cfg=this.wormConfigs[team*3+i]||{color:colors[team][0],hat:colors[team][1]}; this.worms.push(new Worm({x:base.x+(team?1:-1)*i*28,y:base.y,team,color:cfg.color,hat:cfg.hat,name:(team?"Rot ":"Grün ")+(i+1)}));
       }
     }
     this.wind = (Math.random() * 2 - 1) * 12;
