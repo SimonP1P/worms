@@ -1309,3 +1309,40 @@ Phase 20 – Balancing
 
 ### Nächster Schritt
 - Phase 21: Fehlerbehebung, Edge Cases und Performance-Tests.
+
+
+---
+
+## Zyklus 40 – 2026-10-05
+
+### Phase
+Phase 21 – Fehlerbehebung und Stabilität
+
+### Erledigt
+- Regressionstest-Suite für Teamgrößen, Maps, Waffen, Kopfbedeckungen, Terrain, Projektile, große Explosionen und Online-Synchronisation angelegt.
+- GitHub-Actions-Testworkflow mit Node 22 und Syntaxprüfung für `js/`, `server/` und `tests/` eingerichtet.
+- Gleichzeitige CI-Ausführungen auf den neuesten Stand begrenzt.
+- Gleichzeitige Eliminierung beider Teams wird jetzt als Unentschieden behandelt.
+
+### Neue Dateien
+- `tests/game.test.mjs`
+- `tests/content.test.mjs`
+- `.github/workflows/test.yml`
+
+### Geänderte Dateien
+- `package.json`
+- `js/game.js`
+- `server/match.js`
+- `tests/game.test.mjs`
+
+### Tests
+- Erster GitHub-Actions-Lauf wurde ausgeführt; er scheiterte zunächst vor den Tests, weil kein Lockfile vorhanden war.
+- Workflow wurde danach auf `npm install` ohne Cache-Lockfile-Anforderung korrigiert.
+- Neue CI-Läufe sind aktuell in der GitHub-Actions-Warteschlange.
+
+### Bekannte Probleme
+- Die vollständigen manuellen Browser- und Performance-Tests sind noch nicht abgeschlossen.
+- Phase 21 darf deshalb noch nicht als vollständig erledigt markiert werden.
+
+### Nächster Schritt
+- CI-Lauf erfolgreich abschließen, verbleibende Gameplay-/Edge-Case-Tests validieren und anschließend Phase 22 Browser-Kompatibilität beginnen.
