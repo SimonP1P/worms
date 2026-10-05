@@ -1,7 +1,7 @@
 import { Worm } from "./worm.js";
 import { Terrain } from "./terrain.js";
 import { Projectile } from "./projectile.js";
-import { Weapons } from "./weapons.js";
+import { Weapons, BALANCE } from "./weapons.js";
 import { AIController } from "./ai.js";
 import { MAPS, createMap } from "./maps.js";
 
@@ -96,7 +96,7 @@ export class Game {
         const cfg=this.wormConfigs[team*3+i]||{color:colors[team][0],hat:colors[team][1]}; this.worms.push(new Worm({x:base.x+(team?1:-1)*i*28,y:base.y,team,color:cfg.color,hat:cfg.hat,name:(team?"Rot ":"Grün ")+(i+1)}));
       }
     }
-    this.wind = (Math.random() * 2 - 1) * 12;
+    this.wind = BALANCE.minWind + Math.random() * (BALANCE.maxWind-BALANCE.minWind);
     this.team = 0; this.turn = 1; this.turnRemaining = this.turnDuration; this.setActiveWorm(this.worms[0]);
     this.state = STATES.PLAYING;
     if (!this.running) { this.running = true; requestAnimationFrame(t => this.loop(t)); }
@@ -122,7 +122,7 @@ export class Game {
     const alive = this.worms.filter(w => w.alive && w.team === this.team);
     this.setActiveWorm(alive[0] || null);
     this.turn++;
-    this.wind = (Math.random() * 2 - 1) * 12;
+    this.wind = BALANCE.minWind + Math.random() * (BALANCE.maxWind-BALANCE.minWind);
     this.turnRemaining = this.turnDuration;
     window.setTimeout(() => { if (this.state === STATES.TURN) { this.state = STATES.PLAYING; if(this.mode==="pc" && this.team===1) window.setTimeout(()=>this.ai.takeTurn(),250); } }, 300);
   }
